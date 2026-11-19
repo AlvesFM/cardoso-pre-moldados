@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="imagens/produto-bloco.webp">
+<link rel="preload" as="image" href="imagens/capa-patio.webp" fetchpriority="high">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -111,29 +111,22 @@ a{color:inherit}
 .nav .nav-cta{margin-left:12px;color:var(--grafite);padding:0 20px;border-radius:100px}
 .menu-btn{display:none}
 
-/* ===== Capa ===== */
-.hero{position:relative;background:var(--areia);padding:150px 0 var(--sec);overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--linha) 1px,transparent 1px),linear-gradient(90deg,var(--linha) 1px,transparent 1px);background-size:56px 56px;opacity:.45;-webkit-mask-image:linear-gradient(90deg,transparent 35%,#000 85%);mask-image:linear-gradient(90deg,transparent 35%,#000 85%);pointer-events:none}
-.hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(40px,6vw,88px);align-items:center}
-.hero h1{font-family:var(--font-title);font-stretch:80%;font-weight:900;font-size:clamp(2.6rem,4.8vw,4.4rem);line-height:.96;letter-spacing:-.01em;text-transform:uppercase;color:var(--grafite);margin:20px 0 22px}
+/* ===== Capa (foto do pátio ao fundo) ===== */
+.hero{position:relative;isolation:isolate;background:var(--areia);padding:170px 0 clamp(96px,10vw,140px);min-height:min(820px,100vh);display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-2}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%;animation:capaZoom 18s ease-out both}
+@keyframes capaZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(239,236,231,.97) 0%,rgba(239,236,231,.92) 38%,rgba(239,236,231,.62) 68%,rgba(239,236,231,.35) 100%),linear-gradient(0deg,rgba(239,236,231,.9),transparent 30%)}
+.hero .wrap{position:relative;width:100%}
+.hero-text{max-width:640px}
+.hero h1{font-family:var(--font-title);font-stretch:80%;font-weight:900;font-size:clamp(2.6rem,5vw,4.6rem);line-height:.96;letter-spacing:-.01em;text-transform:uppercase;color:var(--grafite);margin:20px 0 22px}
 .hero h1 em{font-style:normal;color:var(--laranja)}
-.hero-sub{font-size:1.1rem;color:var(--muted);max-width:470px;margin-bottom:34px}
+.hero-sub{font-size:1.12rem;color:var(--escuro);max-width:500px;margin-bottom:34px}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
-.hero-facts{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:40px;padding-top:24px;border-top:1px solid var(--linha);list-style:none;max-width:520px}
+.hero .btn-line{background:rgba(255,255,255,.6)}
+.hero-facts{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:40px;padding-top:24px;border-top:1px solid rgba(37,40,43,.14);list-style:none;max-width:520px}
 .hero-facts li{display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--escuro);font-weight:600}
 .hero-facts svg{width:20px;height:20px;stroke:var(--laranja-texto);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
-
-.hero-visual{position:relative;width:100%;max-width:520px;margin-left:auto;padding-top:18%}
-.hero-panel{position:relative;aspect-ratio:1/1;background:var(--grafite);border-radius:28px;overflow:hidden;box-shadow:var(--sombra)}
-.hero-panel::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(167,169,172,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(167,169,172,.08) 1px,transparent 1px);background-size:40px 40px}
-.hero-panel::after{content:"";position:absolute;left:10%;right:10%;bottom:16%;height:28%;background:radial-gradient(ellipse at center,rgba(217,119,50,.28),transparent 70%)}
-.hero-prod{position:absolute;left:12%;right:12%;top:0;z-index:2}
-.hero-prod img{width:100%;filter:drop-shadow(0 34px 30px rgba(0,0,0,.45)) drop-shadow(0 6px 8px rgba(0,0,0,.25));animation:flutua 7s ease-in-out infinite}
-@keyframes flutua{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.hero-cap{position:absolute;left:24px;right:24px;bottom:22px;z-index:3;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;color:#fff}
-.hero-cap strong{display:block;font-family:var(--font-title);font-stretch:85%;font-weight:800;font-size:1.05rem;text-transform:uppercase;letter-spacing:.02em}
-.hero-cap span{font-size:.82rem;color:#C9CBCD}
-.hero-cap i{font-style:normal;font-family:var(--font-title);font-stretch:75%;font-weight:900;font-size:.9rem;color:var(--laranja-claro);letter-spacing:.1em}
 
 /* ===== Produtos (catálogo) ===== */
 .catalog{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -263,12 +256,10 @@ a{color:inherit}
   .nav a.active{color:var(--laranja-claro)}
   .nav .nav-cta{margin:28px 0 0;min-height:54px;font-size:1rem}
 
-  .hero{padding:104px 0 72px}
-  .hero::before{-webkit-mask-image:linear-gradient(transparent 45%,#000 90%);mask-image:linear-gradient(transparent 45%,#000 90%)}
-  .hero .wrap{grid-template-columns:1fr;gap:48px}
+  .hero{padding:112px 0 72px;min-height:0}
+  .hero::after{background:linear-gradient(180deg,rgba(239,236,231,.96) 0%,rgba(239,236,231,.88) 55%,rgba(239,236,231,.7) 100%)}
   .hero h1{font-size:clamp(2.3rem,8.6vw,3.4rem)}
   .hero-sub{font-size:1.02rem;margin-bottom:28px}
-  .hero-visual{max-width:440px;margin:0 auto;padding-top:15%}
   .section-head{grid-template-columns:1fr}
   .sobre .wrap,.local .wrap{grid-template-columns:1fr}
   .sobre-foto img{aspect-ratio:4/3}
@@ -280,9 +271,6 @@ a{color:inherit}
 }
 @media (max-width:640px){
   .hero-actions .btn{width:100%}
-  .hero-visual{max-width:330px;padding-top:14%}
-  .hero-panel{aspect-ratio:1/1.02;border-radius:22px}
-  .hero-cap{left:18px;right:18px;bottom:16px}
   .hero-facts{flex-direction:column;gap:12px;margin-top:32px}
   .prod{flex-direction:column}
   .prod-img{flex:none;aspect-ratio:4/3;min-height:0;border-right:0}
@@ -375,6 +363,7 @@ a{color:inherit}
 
 <!-- CAPA -->
 <section class="hero" id="inicio">
+  <div class="hero-bg" aria-hidden="true"><img src="imagens/capa-patio.webp" alt="" width="1800" height="1472" fetchpriority="high"></div>
   <div class="wrap">
     <div class="hero-text">
       <p class="label rv">Pré-moldados · Park Way, Brasília - DF</p>
@@ -389,11 +378,6 @@ a{color:inherit}
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Seg a Sex 08h–17h · Sáb 08h–12h</li>
       </ul>
     </div>
-    <figure class="hero-visual rv" style="--d:.1s">
-      <div class="hero-panel" aria-hidden="true"></div>
-      <div class="hero-prod" data-depth="12"><img src="imagens/produto-bloco.webp" alt="Bloco de concreto fabricado pela Cardoso Pré-Moldados" width="720" height="800" fetchpriority="high"></div>
-      <figcaption class="hero-cap"><span><strong>Bloco de concreto</strong>Alvenaria estrutural e de vedação</span><i>01</i></figcaption>
-    </figure>
   </div>
 </section>
 

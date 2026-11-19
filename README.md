@@ -12,7 +12,7 @@ Publicado na Vercel a partir da branch `main`.
 
 As fotos de produtos e do pátio são da própria Cardoso Pré-Moldados, enviadas pelo cliente, e foram tratadas (cor, contraste, nitidez e enquadramento) sem alterar os produtos:
 
-- `produto-bloco`: recorte do bloco com fundo transparente, usado na capa.
+- `capa-patio`: foto do pátio usada ao fundo da capa.
 - `catalogo-*`: bloco, canaleta e palete de bloquetes recortados e montados sobre fundo de estúdio.
 - `foto-*`: fotos do pátio usadas na seção da empresa e na galeria.
 - `og-cardoso.jpg`: imagem de compartilhamento montada com os recortes.
