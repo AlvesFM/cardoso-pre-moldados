@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="imagens/capa-patio.webp" fetchpriority="high">
+<link rel="preload" as="image" href="imagens/capa-alvenaria.webp" imagesrcset="imagens/capa-alvenaria-900.webp 900w, imagens/capa-alvenaria.webp 1920w" imagesizes="100vw" fetchpriority="high">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -114,9 +114,9 @@ a{color:inherit}
 /* ===== Capa (foto do pátio ao fundo) ===== */
 .hero{position:relative;isolation:isolate;background:var(--areia);padding:170px 0 clamp(96px,10vw,140px);min-height:min(820px,100vh);display:flex;align-items:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0;z-index:-2}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 40%;animation:capaZoom 18s ease-out both}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:70% 50%;animation:capaZoom 18s ease-out both}
 @keyframes capaZoom{from{transform:scale(1.08)}to{transform:scale(1)}}
-.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(239,236,231,.97) 0%,rgba(239,236,231,.92) 38%,rgba(239,236,231,.62) 68%,rgba(239,236,231,.35) 100%),linear-gradient(0deg,rgba(239,236,231,.9),transparent 30%)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(239,236,231,1) 0%,rgba(239,236,231,.95) 30%,rgba(239,236,231,.7) 48%,rgba(239,236,231,.25) 72%,rgba(239,236,231,0) 100%),linear-gradient(0deg,rgba(239,236,231,1) 0%,rgba(239,236,231,0) 26%),linear-gradient(180deg,rgba(239,236,231,.75) 0%,rgba(239,236,231,0) 22%)}
 .hero .wrap{position:relative;width:100%}
 .hero-text{max-width:640px}
 .hero h1{font-family:var(--font-title);font-stretch:80%;font-weight:900;font-size:clamp(2.6rem,5vw,4.6rem);line-height:.96;letter-spacing:-.01em;text-transform:uppercase;color:var(--grafite);margin:20px 0 22px}
@@ -257,7 +257,8 @@ a{color:inherit}
   .nav .nav-cta{margin:28px 0 0;min-height:54px;font-size:1rem}
 
   .hero{padding:112px 0 72px;min-height:0}
-  .hero::after{background:linear-gradient(180deg,rgba(239,236,231,.96) 0%,rgba(239,236,231,.88) 55%,rgba(239,236,231,.7) 100%)}
+  .hero-bg img{object-position:72% 50%}
+  .hero::after{background:linear-gradient(180deg,rgba(239,236,231,.97) 0%,rgba(239,236,231,.9) 45%,rgba(239,236,231,.72) 75%,rgba(239,236,231,1) 100%)}
   .hero h1{font-size:clamp(2.3rem,8.6vw,3.4rem)}
   .hero-sub{font-size:1.02rem;margin-bottom:28px}
   .section-head{grid-template-columns:1fr}
@@ -363,7 +364,7 @@ a{color:inherit}
 
 <!-- CAPA -->
 <section class="hero" id="inicio">
-  <div class="hero-bg" aria-hidden="true"><img src="imagens/capa-patio.webp" alt="" width="1800" height="1472" fetchpriority="high"></div>
+  <div class="hero-bg" aria-hidden="true"><img src="imagens/capa-alvenaria.webp" srcset="imagens/capa-alvenaria-900.webp 900w, imagens/capa-alvenaria.webp 1920w" sizes="100vw" alt="" width="1920" height="1280" fetchpriority="high"></div>
   <div class="wrap">
     <div class="hero-text">
       <p class="label rv">Pré-moldados · Park Way, Brasília - DF</p>
