@@ -1,432 +1,808 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardoso Pré-Moldados | Blocos de Concreto e Canaletas no DF</title>
-    <link rel="icon" href="imagens/logo.jpg" type="image/jpeg">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-        :root{
-            --bg:#f8fafc;--white:#ffffff;--warm:#f1f5f9;--sand:#e2e8f0;
-            --accent:#ea580c;--accent-dark:#c2410c;--accent-glow:rgba(234,88,12,0.15);
-            --green:#25D366;
-            --dark:#0f172a;--text:#334155;--muted:#64748b;--light-text:#94a3b8;
-            --border:rgba(15,23,42,0.08);
-            --radius:20px;--radius-sm:12px;
-            --shadow-sm:0 1px 3px rgba(0,0,0,0.06);
-            --shadow-md:0 8px 30px rgba(0,0,0,0.08);
-            --shadow-lg:0 20px 60px rgba(0,0,0,0.12);
-        }
-        html{scroll-behavior:smooth}
-        body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cardoso Pré-Moldados | Blocos de Concreto, Canaletas e Bloquetes no DF</title>
+<meta name="description" content="Fábrica de blocos de concreto, canaletas, meias-calhas e bloquetes no Park Way, Brasília - DF. Entrega para todo o Distrito Federal e entorno. Orçamento rápido pelo WhatsApp (61) 99267-9699.">
+<link rel="canonical" href="https://xn--cardosoprmoldadosdf-jzb.com.br/">
+<meta name="theme-color" content="#25282B">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Cardoso Pré-Moldados">
+<meta property="og:title" content="Cardoso Pré-Moldados | Blocos de concreto no DF">
+<meta property="og:description" content="Blocos de concreto, canaletas, meias-calhas e bloquetes. Entrega para todo o DF e entorno. Orçamento pelo WhatsApp.">
+<meta property="og:url" content="https://xn--cardosoprmoldadosdf-jzb.com.br/">
+<meta property="og:image" content="https://xn--cardosoprmoldadosdf-jzb.com.br/imagens/og-cardoso.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="imagens/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="imagens/patio.webp" imagesrcset="imagens/patio-800.webp 800w, imagens/patio.webp 1376w" imagesizes="(max-width: 900px) 100vw, 55vw">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Cardoso Pré-Moldados",
+  "description": "Fabricação de blocos de concreto, canaletas, meias-calhas e bloquetes para todo o Distrito Federal e entorno.",
+  "url": "https://xn--cardosoprmoldadosdf-jzb.com.br/",
+  "image": "https://xn--cardosoprmoldadosdf-jzb.com.br/imagens/og-cardoso.jpg",
+  "telephone": "+55-61-99267-9699",
+  "address": {"@type": "PostalAddress", "addressLocality": "Park Way, Brasília", "addressRegion": "DF", "addressCountry": "BR"},
+  "geo": {"@type": "GeoCoordinates", "latitude": -15.8862127, "longitude": -47.9877829},
+  "areaServed": ["Distrito Federal", "Entorno do DF"],
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "17:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00"}
+  ],
+  "hasMap": "https://maps.app.goo.gl/DZ4xfc6Rin1j3MFt6"
+}
+</script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --grafite:#25282B; --grafite-2:#1C1E20; --escuro:#373B3F; --concreto:#A7A9AC;
+  --concreto-claro:#E6E6E3; --areia:#F2F2F0; --branco:#FFFFFF;
+  --laranja:#D97732; --laranja-texto:#A84F15; --laranja-claro:#F39A4F;
+  --texto:#2E3236; --muted:#5B6066;
+  --radius:6px; --max:1240px;
+  --pad:clamp(20px,4.5vw,56px);
+  --font-title:'Archivo',system-ui,sans-serif;
+  --font:'Manrope',system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.75,.2,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{background:var(--branco);color:var(--texto);font-family:var(--font);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--laranja);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.wrap>*,.prod-grid>*,.galeria-grid>*,.dif-grid>*{min-width:0}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-        /* ===== TOP BANNER (logo strip) ===== */
-        .top-banner{background:var(--dark);height:180px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
-        .top-banner img{height:100%;transform:scale(2.2);mix-blend-mode:lighten;filter:contrast(1.15);-webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 50%, black 55%, transparent 100%);mask-image:radial-gradient(ellipse 80% 60% at 50% 50%, black 55%, transparent 100%)}
+/* ===== Textura de concreto (SVG noise) ===== */
+.grain{position:relative;isolation:isolate}
+.grain::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.5;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
-        /* ===== NAV ===== */
-        .nav{position:sticky;top:0;background:rgba(255,255,255,0.85);backdrop-filter:blur(10px);z-index:100;border-bottom:1px solid rgba(0,0,0,0.05);transition:padding .4s ease, background .4s ease, box-shadow .4s ease}
-        .nav.scrolled{background:rgba(255,255,255,0.98);box-shadow:0 4px 20px rgba(0,0,0,0.06)}
-        .nav-inner{max-width:1200px;margin:0 auto;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;transition:padding .4s ease;height:56px}
-        .nav.scrolled .nav-inner{padding:10px 20px;height:48px}
-        .nav-brand-link{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;color:var(--dark);text-decoration:none;letter-spacing:0.5px}
-        .nav-links{display:flex;gap:28px;list-style:none}
-        .nav-links a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.5px;transition:color .2s}
-        .nav-links a:hover{color:var(--accent-dark)}
-        .nav-cta{background:var(--accent);color:#fff;text-decoration:none;padding:10px 22px;border-radius:100px;font-weight:600;font-size:0.85rem;transition:all .2s;box-shadow:0 2px 12px rgba(234,88,12,0.3)}
-        .nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(234,88,12,0.45)}
+/* ===== Logo (proporções do arquivo original; 1em = altura do nome) ===== */
+.logo{display:inline-flex;align-items:center;gap:.737em;text-decoration:none;color:#0B3A38;font-family:'Manrope',system-ui,sans-serif;font-size:15px;line-height:1}
+.logo-mark{width:4.474em;height:4.474em;flex:none}
+.logo-text{display:flex;flex-direction:column;align-items:stretch;gap:.289em}
+.logo-name{font-size:1em;line-height:1;letter-spacing:.01em;white-space:nowrap}
+.logo-name b{font-weight:800}.logo-name span{font-weight:400}
+.logo-tag{display:flex;align-items:center;justify-content:center;gap:.316em}
+.logo-tag i{width:.947em;height:.039em;min-height:1.5px;background:#EE8434;display:block}
+.logo-tag span{font-size:.368em;font-weight:500;letter-spacing:.3em;text-transform:uppercase;white-space:nowrap;color:#A84F15;margin-right:-.3em}
+.logo-phone{display:flex;align-items:center;justify-content:center;gap:.21em;margin-top:.13em}
+.logo-phone svg{width:.684em;height:.684em}
+.logo-phone span{font-size:.526em;font-weight:700;letter-spacing:.01em;white-space:nowrap}
 
-        /* ===== HERO ===== */
-        .hero{min-height:92vh;display:flex;align-items:center;justify-content:center;padding:80px clamp(20px,4vw,60px) 60px;background:var(--white);position:relative;overflow:hidden}
-        .hero-bg{position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,var(--accent-glow),transparent 60%),radial-gradient(circle at 20% 80%,rgba(226,232,240,0.5),transparent 40%);pointer-events:none}
-        .hero-grid{position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:0.4;pointer-events:none}
-        .hero-inner{max-width:1000px;margin:0 auto;display:flex;flex-direction:column;align-items:center;position:relative;z-index:2;text-align:center}
-        
-        .hero-carousel{width:100%;max-width:900px;aspect-ratio:16/9;position:relative;margin-top:60px;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);background:var(--dark)}
-        .carousel-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s ease;will-change:opacity}
-        .carousel-slide.active{opacity:1;z-index:1}
-        .carousel-dots{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:12px;z-index:2}
-        .carousel-dot{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,0.4);cursor:pointer;transition:all .3s}
-        .carousel-dot.active{background:var(--accent);box-shadow:0 0 10px rgba(234,88,12,0.6);transform:scale(1.1)}
-        
-        .hero-pill{display:inline-flex;align-items:center;gap:8px;background:var(--accent-glow);border:1px solid rgba(234,88,12,0.35);padding:8px 18px;border-radius:100px;font-size:0.78rem;font-weight:600;color:var(--accent-dark);letter-spacing:1px;text-transform:uppercase;margin-bottom:28px}
-        .hero-pill span{width:8px;height:8px;background:var(--accent);border-radius:50%;animation:blink 2s ease infinite}
-        @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
-        .hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.5rem,5vw,4.2rem);font-weight:800;line-height:1.08;color:var(--dark);margin-bottom:20px;letter-spacing:-1px}
-        .hero h1 .highlight{color:var(--accent-dark);position:relative}
-        .hero h1 .highlight::after{content:'';position:absolute;bottom:4px;left:0;right:0;height:8px;background:var(--accent);opacity:0.25;border-radius:4px;z-index:-1}
-        .hero-sub{font-size:1.1rem;color:var(--muted);line-height:1.7;margin-bottom:36px;max-width:540px;margin-left:auto;margin-right:auto}
-        .hero-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-        .btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#fff;text-decoration:none;padding:16px 32px;border-radius:100px;font-weight:600;font-size:1rem;transition:all .25s;box-shadow:0 4px 20px rgba(37,211,102,0.3)}
-        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,0.45)}
-        .btn-primary svg{width:22px;height:22px;fill:#fff}
-        .btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text);text-decoration:none;padding:16px 28px;border-radius:100px;font-weight:600;font-size:0.95rem;border:2px solid var(--border);transition:all .25s}
-        .btn-secondary:hover{border-color:var(--accent);color:var(--accent-dark)}
-        
-        .hero-stat-row{display:flex;gap:40px;margin-top:50px;padding-top:28px;border-top:1px solid var(--border);justify-content:center;flex-wrap:wrap}
-        .hero-stat h4{font-family:'Space Grotesk',sans-serif;font-size:1.8rem;font-weight:700;color:var(--dark)}
-        .hero-stat p{font-size:0.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+/* ===== Header ===== */
+.topbar{background:var(--grafite);color:var(--concreto);font-size:.8rem}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:38px}
+.topbar p{display:flex;align-items:center;gap:8px}
+.topbar svg{width:14px;height:14px;stroke:var(--laranja-claro);fill:none;stroke-width:2}
+.topbar a{color:#fff;text-decoration:none;font-weight:600}
+.topbar a:hover{color:var(--laranja-claro)}
+.header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(37,40,43,.08);transition:box-shadow .35s var(--ease)}
+.header.scrolled{box-shadow:0 10px 30px -12px rgba(28,30,32,.25)}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:88px;transition:height .35s var(--ease)}
+.header.scrolled .wrap{height:72px}
+.header .logo{transition:font-size .35s var(--ease)}
+.header.scrolled .logo{font-size:13px}
+.nav{display:flex;align-items:center;gap:6px}
+.nav a{position:relative;text-decoration:none;font-weight:600;font-size:.92rem;color:var(--escuro);padding:10px 14px}
+.nav a::after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:2px;background:var(--laranja);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.nav a:hover::after,.nav a.active::after{transform:scaleX(1)}
+.nav a:hover{color:var(--grafite)}
+.menu-btn{display:none}
 
-        /* ===== CATALOG ===== */
-        .catalog{padding:120px clamp(20px,4vw,60px);background:var(--bg)}
-        .catalog-inner{max-width:1200px;margin:0 auto}
-        .section-label{font-size:0.78rem;font-weight:600;color:var(--accent-dark);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
-        .section-heading{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;color:var(--dark);margin-bottom:16px;letter-spacing:-0.5px}
-        .section-desc{color:var(--muted);font-size:1rem;line-height:1.7;max-width:500px;margin-bottom:60px}
-        .catalog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-        .card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .35s ease;cursor:default}
-        .card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:rgba(234,88,12,0.3)}
-        .card-img{width:100%;height:280px;object-fit:cover;transition:transform .5s ease}
-        .card:hover .card-img{transform:scale(1.04)}
-        .zoom-img{transform:scale(1.8)}
-        .card:hover .zoom-img{transform:scale(1.85)}
-        .card-body{padding:28px;position:relative;z-index:2;background:var(--white)}
-        .card-body h3{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:700;color:var(--dark);margin-bottom:10px}
-        .card-body p{color:var(--muted);font-size:0.88rem;line-height:1.65;margin-bottom:20px}
-        .card-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent-dark);font-weight:600;font-size:0.85rem;text-decoration:none;transition:gap .2s}
-        .card-link:hover{gap:10px}
-        .card-link svg{width:16px;height:16px;fill:none;stroke:var(--accent-dark);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
-        .card-link:hover svg{transform:translateX(2px)}
+/* ===== Botões ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:var(--radius);font-family:var(--font);font-weight:700;font-size:.98rem;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:transform .25s var(--ease),background .25s,box-shadow .25s,color .25s,border-color .25s;white-space:nowrap}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-primary{background:var(--laranja);color:var(--grafite);box-shadow:0 10px 24px -10px rgba(217,119,50,.7)}
+.btn-primary:hover{transform:translateY(-2px);background:#E4864A;box-shadow:0 16px 30px -12px rgba(217,119,50,.85)}
+.btn-primary svg{fill:var(--grafite)}
+.btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn-ghost svg{stroke:currentColor;fill:none;stroke-width:2;transition:transform .25s var(--ease)}
+.btn-ghost:hover svg{transform:translateY(3px)}
+.btn-dark{background:var(--grafite);color:#fff}
+.btn-dark:hover{background:var(--escuro);transform:translateY(-2px)}
+.btn-dark svg{fill:#fff}
+.btn-sm{min-height:44px;padding:0 18px;font-size:.9rem}
 
-        /* ===== LOCATION ===== */
-        .location{padding:120px clamp(20px,4vw,60px);background:var(--white);border-top:1px solid var(--border)}
-        .location-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-        .location-map{border-radius:var(--radius);overflow:hidden;height:420px;box-shadow:var(--shadow-lg);border:1px solid var(--border)}
-        .location-map iframe{width:100%;height:100%;border:none}
-        .loc-detail{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px}
-        .loc-icon{width:44px;height:44px;background:var(--accent-glow);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-        .loc-icon svg{width:20px;height:20px;fill:var(--accent-dark)}
-        .loc-detail h4{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.95rem;color:var(--dark);margin-bottom:3px}
-        .loc-detail p{font-size:0.85rem;color:var(--muted);line-height:1.5}
-        .loc-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
-        .loc-tag{background:var(--warm);color:var(--text);padding:8px 16px;border-radius:100px;font-size:0.78rem;font-weight:500}
+/* ===== Hero ===== */
+.hero{background:var(--grafite);color:#fff;overflow:hidden}
+.hero-blueprint{position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(rgba(167,169,172,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(167,169,172,.07) 1px,transparent 1px);
+  background-size:48px 48px;-webkit-mask-image:linear-gradient(100deg,#000 0%,rgba(0,0,0,.5) 55%,transparent 80%);mask-image:linear-gradient(100deg,#000 0%,rgba(0,0,0,.5) 55%,transparent 80%)}
+.hero .wrap{display:grid;grid-template-columns:1.02fr 1fr;gap:56px;align-items:center;padding-top:clamp(56px,7vw,96px);padding-bottom:clamp(64px,8vw,110px)}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja-claro)}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--laranja)}
+.hero h1{font-family:var(--font-title);font-stretch:82%;font-weight:800;font-size:clamp(2.6rem,5.4vw,4.6rem);line-height:.98;letter-spacing:-.01em;text-transform:uppercase;margin:22px 0 24px}
+.hero h1 em{font-style:normal;color:var(--laranja)}
+.hero-sub{font-size:clamp(1rem,1.3vw,1.14rem);color:#C9CBCD;max-width:520px;margin-bottom:34px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.hero-facts{display:grid;grid-template-columns:repeat(3,auto);gap:0;margin-top:46px;border-top:1px solid rgba(167,169,172,.22);padding-top:24px;justify-content:start}
+.hero-facts li{list-style:none;padding:0 26px;border-left:1px solid rgba(167,169,172,.22)}
+.hero-facts li:first-child{padding-left:0;border-left:0}
+.hero-facts strong{display:block;font-family:var(--font-title);font-stretch:85%;font-size:1.12rem;font-weight:700;color:#fff;letter-spacing:.01em}
+.hero-facts span{font-size:.8rem;color:var(--concreto)}
+.hero-visual{position:relative;height:min(600px,62vw)}
+.hv-main{position:absolute;inset:0 0 56px 48px;border-radius:var(--radius);overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+.hv-main img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 1.6s var(--ease)}
+.hero.ready .hv-main img{transform:scale(1)}
+.hv-main::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(28,30,32,.55))}
+.hv-second{position:absolute;left:0;bottom:0;width:44%;aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;border:6px solid var(--grafite);box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.hv-second img{width:100%;height:100%;object-fit:cover}
+.hv-block{position:absolute;right:-26px;top:-26px;width:150px;height:150px;z-index:-1;
+  background-image:radial-gradient(var(--laranja) 2px,transparent 2.5px);background-size:16px 16px;opacity:.55;animation:drift 9s ease-in-out infinite alternate}
+.hv-badge{position:absolute;right:22px;bottom:80px;background:#fff;color:var(--grafite);border-radius:var(--radius);padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 20px 40px -18px rgba(0,0,0,.6);animation:float 5s ease-in-out infinite}
+.hv-badge svg{width:34px;height:34px;flex:none}
+.hv-badge strong{display:block;font-family:var(--font-title);font-stretch:85%;font-size:1rem;line-height:1.1}
+.hv-badge span{font-size:.78rem;color:var(--muted)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes drift{from{transform:translate(0,0)}to{transform:translate(-10px,12px)}}
 
-        /* ===== CTA ===== */
-        .cta{padding:100px clamp(20px,4vw,60px);background:var(--dark);text-align:center;position:relative;overflow:hidden}
-        .cta::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 50% 50%,rgba(234,88,12,0.06),transparent 60%);pointer-events:none}
-        .cta-inner{max-width:600px;margin:0 auto;position:relative;z-index:2}
-        .cta h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;color:#fff;margin-bottom:14px;letter-spacing:-0.5px}
-        .cta p{color:rgba(255,255,255,0.6);font-size:1.05rem;margin-bottom:36px;line-height:1.6}
+/* ===== Faixa (ticker) ===== */
+.ticker{background:var(--laranja);color:var(--grafite);overflow:hidden;border-block:1px solid rgba(0,0,0,.08)}
+.ticker-track{display:flex;width:max-content;animation:ticker 36s linear infinite}
+.ticker ul{display:flex;list-style:none}
+.ticker li{display:flex;align-items:center;gap:22px;padding:16px 22px;font-family:var(--font-title);font-stretch:80%;font-weight:800;font-size:1.05rem;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+.ticker li::after{content:"";width:10px;height:10px;background:var(--grafite);transform:rotate(45deg)}
+@keyframes ticker{to{transform:translateX(-50%)}}
 
-        /* ===== FOOTER ===== */
-        .footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.06);padding:60px clamp(20px,4vw,60px) 30px;color:rgba(255,255,255,0.5)}
-        .footer-inner{max-width:1200px;margin:0 auto}
-        .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:50px}
-        .footer-brand{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-        .footer-brand img{height:50px;width:50px;border-radius:10px;object-fit:cover;mix-blend-mode:lighten;filter:contrast(1.15)}
-        .footer-brand span{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:#fff}
-        .footer h5{font-family:'Space Grotesk',sans-serif;font-size:0.8rem;font-weight:600;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:18px}
-        .footer p,.footer a{font-size:0.88rem;line-height:2;text-decoration:none;display:block;color:rgba(255,255,255,0.5);transition:color .2s}
-        .footer a:hover{color:var(--accent)}
-        .footer-bottom{text-align:center;margin-top:50px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);font-size:0.75rem;color:rgba(255,255,255,0.3)}
+/* ===== Seções ===== */
+section{scroll-margin-top:80px}
+.section{padding:clamp(72px,10vw,128px) 0}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:clamp(36px,5vw,56px)}
+.label{display:inline-flex;align-items:center;gap:12px;font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja-texto);margin-bottom:16px}
+.label::before{content:"";width:28px;height:2px;background:var(--laranja)}
+.h2{font-family:var(--font-title);font-stretch:82%;font-weight:800;font-size:clamp(2rem,4vw,3.3rem);line-height:1;text-transform:uppercase;color:var(--grafite);letter-spacing:-.005em}
+.lead{color:var(--muted);font-size:1.05rem;max-width:460px}
 
-        /* ===== WA FLOAT ===== */
-        .wa-float{position:fixed;bottom:24px;right:24px;z-index:999;width:60px;height:60px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:all .25s;text-decoration:none}
-        .wa-float:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,0.55)}
-        .wa-float svg{width:30px;height:30px;fill:#fff}
+/* ===== Produtos ===== */
+.produtos{background:var(--areia)}
+.prod-grid{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:auto auto;gap:24px}
+.prod{position:relative;background:#fff;border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;border:1px solid rgba(37,40,43,.07);transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.prod:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(28,30,32,.45)}
+.prod-media{position:relative;overflow:hidden;aspect-ratio:16/10;background:var(--concreto-claro)}
+.prod-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.prod:hover .prod-media img{transform:scale(1.06)}
+.prod-num{position:absolute;left:18px;top:16px;font-family:var(--font-title);font-stretch:75%;font-weight:900;font-size:1rem;color:#fff;background:rgba(28,30,32,.75);backdrop-filter:blur(6px);padding:6px 10px;border-radius:4px;letter-spacing:.06em}
+.prod-body{padding:26px 28px 28px;display:flex;flex-direction:column;gap:12px;flex:1}
+.prod h3{font-family:var(--font-title);font-stretch:85%;font-weight:800;font-size:1.5rem;text-transform:uppercase;color:var(--grafite);line-height:1.05}
+.prod p{color:var(--muted);font-size:.96rem}
+.prod-uses{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+.prod-uses li{list-style:none;font-size:.78rem;font-weight:700;color:var(--escuro);background:var(--areia);border:1px solid rgba(37,40,43,.08);padding:6px 11px;border-radius:100px}
+.prod .btn{margin-top:auto;align-self:flex-start}
+.prod-cta{display:inline-flex;align-items:center;gap:10px;margin-top:auto;padding-top:8px;font-weight:800;color:var(--laranja-texto);text-decoration:none;min-height:44px}
+.prod-cta svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.2;transition:transform .3s var(--ease)}
+.prod-cta:hover svg{transform:translateX(5px)}
+.prod-feature{grid-row:span 2;background:var(--grafite);border:0}
+.prod-feature .prod-media{aspect-ratio:auto;flex:1;min-height:360px}
+.prod-feature h3{color:#fff;font-size:clamp(1.8rem,2.8vw,2.4rem)}
+.prod-feature p{color:#C9CBCD;font-size:1.02rem;max-width:520px}
+.prod-feature .prod-uses li{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:#E6E6E3}
+.prod-flag{position:absolute;right:18px;top:16px;background:var(--laranja);color:var(--grafite);font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:7px 12px;border-radius:4px}
+.prod-side{display:grid;grid-template-columns:42% 1fr}
+.prod-side .prod-media{aspect-ratio:auto;height:100%;min-height:260px}
+.prod-side .prod-body{padding:24px}
+.prod-side h3{font-size:1.3rem}
 
-        /* ===== SCROLL ANIMATIONS ===== */
-        .reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(0.2,0.8,0.2,1),transform .8s cubic-bezier(0.2,0.8,0.2,1)}
-        .reveal.visible{opacity:1;transform:translateY(0)}
-        
-        .reveal-left{opacity:0;transform:translateX(-50px);transition:opacity .8s ease,transform .8s ease}
-        .reveal-left.visible{opacity:1;transform:translateX(0)}
-        
-        .reveal-right{opacity:0;transform:translateX(50px);transition:opacity .8s ease,transform .8s ease}
-        .reveal-right.visible{opacity:1;transform:translateX(0)}
-        
-        .delay-1{transition-delay:.15s}
-        .delay-2{transition-delay:.30s}
-        .delay-3{transition-delay:.45s}
+/* ===== Institucional ===== */
+.sobre .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(40px,6vw,88px);align-items:center}
+.sobre-visual{position:relative;padding:0 0 40px 40px}
+.sobre-visual .frame{position:absolute;left:0;bottom:0;width:62%;height:70%;border:2px solid var(--laranja);border-radius:var(--radius)}
+.sobre-visual img{position:relative;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius);box-shadow:0 40px 70px -35px rgba(28,30,32,.6)}
+.sobre-stamp{position:absolute;right:-14px;top:28px;width:128px;height:128px;border-radius:50%;background:var(--grafite);color:#fff;display:grid;place-items:center;text-align:center;box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
+.sobre-stamp svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 22s linear infinite}
+.sobre-stamp text{font-family:var(--font);font-size:10.5px;font-weight:800;letter-spacing:.2em;fill:#E6E6E3;text-transform:uppercase}
+.sobre-stamp b{font-family:var(--font-title);font-stretch:80%;font-size:1.05rem;line-height:1.05;color:var(--laranja-claro);text-transform:uppercase}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sobre-text p:not(.label){color:var(--muted);font-size:1.05rem;margin-top:20px;max-width:560px}
+.pilares{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
+.pilar{display:flex;gap:14px;align-items:flex-start;padding:18px;border:1px solid rgba(37,40,43,.1);border-radius:var(--radius);transition:border-color .3s,background .3s,transform .35s var(--ease)}
+.pilar:hover{border-color:var(--laranja);background:#FFF9F4;transform:translateY(-3px)}
+.pilar svg{width:38px;height:38px;flex:none;stroke:var(--laranja-texto);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.pilar h3{font-size:1rem;font-weight:800;color:var(--grafite);line-height:1.25}
+.pilar p{font-size:.87rem;color:var(--muted);margin-top:3px;line-height:1.5}
 
-        /* ===== RESPONSIVE ===== */
-        @media(max-width:900px){
-            .catalog-grid{grid-template-columns:1fr;max-width:480px;margin:0 auto}
-            .location-inner{grid-template-columns:1fr}
-            .location-map{height:280px}
-            .footer-grid{grid-template-columns:1fr}
-            .nav-links{display:none}
-        }
-        @media(max-width:600px){
-            .top-banner{height:120px}
-            .top-banner img{transform:scale(2.5)}
-            .nav{padding:0 16px}
-            .nav-inner{height:50px}
-            .nav-brand-link{font-size:0.9rem}
-            .nav-cta{padding:8px 16px;font-size:0.78rem}
-            .hero{padding:60px 20px 50px;min-height:auto}
-            .hero-carousel{margin-top:40px;border-radius:var(--radius-sm)}
-            .hero h1{font-size:2.2rem;letter-spacing:-0.5px}
-            .hero-pill{font-size:0.7rem;padding:6px 14px}
-            .hero-sub{font-size:0.95rem;margin-bottom:28px}
-            .btn-primary{padding:14px 28px;font-size:0.9rem;width:100%;justify-content:center}
-            .btn-secondary{padding:14px 24px;font-size:0.88rem;width:100%;justify-content:center}
-            .hero-actions{flex-direction:column;gap:10px;width:100%}
-            .hero-stat-row{gap:20px;flex-wrap:wrap}
-            .hero-stat h4{font-size:1.4rem}
-            .hero-stat p{font-size:0.7rem}
-            .catalog,.location{padding:70px 20px}
-            .section-heading{font-size:1.6rem}
-            .section-label{font-size:0.72rem}
-            .section-desc{font-size:0.9rem;margin-bottom:36px}
-            .catalog-grid{max-width:100%}
-            .card-img{height:240px}
-            .card-body{padding:22px}
-            .card-body h3{font-size:1.05rem}
-            .card-body p{font-size:0.84rem}
-            .location-map{height:240px;border-radius:var(--radius-sm)}
-            .loc-detail{gap:12px;margin-bottom:16px}
-            .loc-icon{width:38px;height:38px}
-            .loc-icon svg{width:18px;height:18px}
-            .loc-detail h4{font-size:0.88rem}
-            .loc-detail p{font-size:0.82rem}
-            .loc-tags{gap:6px;margin-top:20px}
-            .loc-tag{font-size:0.72rem;padding:6px 12px}
-            .cta{padding:70px 20px}
-            .cta h2{font-size:1.5rem}
-            .cta p{font-size:0.92rem}
-            .cta .btn-primary{width:100%;justify-content:center}
-            .footer{padding:40px 20px 24px}
-            .footer-grid{gap:30px}
-            .footer-brand span{font-size:0.95rem}
-            .footer h5{font-size:0.72rem;margin-bottom:12px}
-            .footer p,.footer a{font-size:0.82rem;line-height:1.8}
-            .footer-bottom{margin-top:30px;font-size:0.68rem}
-            .wa-float{width:52px;height:52px;bottom:18px;right:18px}
-            .wa-float svg{width:26px;height:26px}
-        }
-    </style>
+/* ===== Diferenciais ===== */
+.dif{background:var(--grafite);color:#fff;overflow:hidden}
+.dif .h2{color:#fff}
+.dif .label{color:var(--laranja-claro)}
+.dif .lead{color:#B9BBBE}
+.dif-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(167,169,172,.16);border:1px solid rgba(167,169,172,.16);border-radius:var(--radius);overflow:hidden}
+.dif-item{position:relative;background:var(--grafite);padding:clamp(28px,3.4vw,42px);transition:background .4s var(--ease)}
+.dif-item::before{content:"";position:absolute;left:0;top:0;height:3px;width:100%;background:var(--laranja);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.dif-item:hover{background:var(--escuro)}
+.dif-item:hover::before{transform:scaleX(1)}
+.dif-icon{width:60px;height:60px;border-radius:var(--radius);background:rgba(217,119,50,.12);display:grid;place-items:center;margin-bottom:24px;transition:transform .4s var(--ease)}
+.dif-item:hover .dif-icon{transform:translateY(-4px) rotate(-4deg)}
+.dif-icon svg{width:34px;height:34px;stroke:var(--laranja-claro);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.dif-item h3{font-family:var(--font-title);font-stretch:85%;font-size:1.3rem;font-weight:800;text-transform:uppercase;letter-spacing:.01em;margin-bottom:8px}
+.dif-item p{color:#B9BBBE;font-size:.95rem}
+
+/* ===== Galeria ===== */
+.galeria-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(120px,14vw,190px);gap:16px}
+.gal{position:relative;overflow:hidden;border-radius:var(--radius);background:var(--concreto-claro);border:0;padding:0;cursor:zoom-in;font:inherit;color:inherit;text-align:left}
+.gal figure{height:100%}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease),filter .5s}
+.gal:hover img{transform:scale(1.06)}
+.gal figcaption{position:absolute;left:14px;bottom:14px;background:rgba(28,30,32,.82);color:#fff;font-size:.8rem;font-weight:700;padding:7px 12px;border-radius:4px;transform:translateY(8px);opacity:0;transition:all .35s var(--ease)}
+.gal:hover figcaption,.gal:focus-visible figcaption{transform:none;opacity:1}
+.g1{grid-column:span 7;grid-row:span 2}.g2{grid-column:span 5;grid-row:span 3}
+.g3{grid-column:span 4;grid-row:span 2}.g4{grid-column:span 3;grid-row:span 2}
+.g5{grid-column:span 5;grid-row:span 2}.g6{grid-column:span 7;grid-row:span 1}
+.lightbox{border:0;padding:0;background:transparent;max-width:min(1100px,94vw);max-height:90vh;margin:auto}
+.lightbox::backdrop{background:rgba(20,21,23,.9)}
+.lightbox img{max-width:100%;max-height:82vh;border-radius:var(--radius);margin:0 auto}
+.lightbox p{color:#E6E6E3;text-align:center;margin-top:12px;font-weight:600}
+.lb-close{position:fixed;top:16px;right:16px;width:48px;height:48px;border-radius:50%;border:0;background:#fff;color:var(--grafite);cursor:pointer;display:grid;place-items:center}
+.lb-close svg{width:22px;height:22px;stroke:currentColor;stroke-width:2.4}
+
+/* ===== Localização ===== */
+.local{background:var(--areia)}
+.local .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(32px,5vw,72px);align-items:stretch}
+.info-list{list-style:none;margin-top:32px;display:grid;gap:14px}
+.info-list li{display:flex;gap:16px;align-items:flex-start;background:#fff;padding:18px 20px;border-radius:var(--radius);border:1px solid rgba(37,40,43,.07)}
+.info-list svg{width:24px;height:24px;flex:none;stroke:var(--laranja-texto);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+.info-list h3{font-size:.98rem;font-weight:800;color:var(--grafite)}
+.info-list p,.info-list a{font-size:.94rem;color:var(--muted);text-decoration:none}
+.info-list a:hover{color:var(--laranja-texto)}
+.map{border-radius:var(--radius);overflow:hidden;min-height:440px;box-shadow:0 30px 60px -35px rgba(28,30,32,.55);border:6px solid #fff;background:var(--concreto-claro)}
+.map iframe{width:100%;height:100%;min-height:428px;border:0;display:block;filter:grayscale(.35) contrast(1.05)}
+
+/* ===== CTA ===== */
+.cta{background:var(--laranja);color:var(--grafite);overflow:hidden}
+.cta-pattern{position:absolute;right:-40px;top:50%;transform:translateY(-50%);width:min(560px,60vw);opacity:.16;z-index:-1;pointer-events:none}
+.cta .wrap{padding-top:clamp(64px,8vw,100px);padding-bottom:clamp(64px,8vw,100px);display:flex;justify-content:space-between;align-items:center;gap:40px}
+.cta h2{font-family:var(--font-title);font-stretch:80%;font-weight:900;font-size:clamp(2.2rem,5vw,4rem);line-height:.96;text-transform:uppercase;max-width:640px}
+.cta p{font-size:1.1rem;margin-top:16px;max-width:520px;font-weight:500}
+.cta-side{display:flex;flex-direction:column;gap:14px;align-items:flex-start;flex:none}
+.cta-phone{font-family:var(--font-title);font-stretch:85%;font-size:1.5rem;font-weight:800;text-decoration:none;display:flex;align-items:center;gap:10px;min-height:44px}
+.cta-phone:hover{text-decoration:underline;text-underline-offset:4px}
+.cta .btn-dark{min-height:60px;padding:0 32px;font-size:1.05rem;box-shadow:0 18px 30px -16px rgba(28,30,32,.7)}
+
+/* ===== Rodapé ===== */
+.footer{background:var(--concreto-claro);color:var(--texto)}
+.footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:40px;padding-top:clamp(56px,7vw,80px);padding-bottom:48px}
+.footer .logo{font-size:13px}
+.footer-about{color:var(--muted);font-size:.94rem;margin-top:22px;max-width:380px}
+.footer h2{font-family:var(--font-title);font-stretch:85%;font-size:.95rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--grafite);margin-bottom:16px}
+.footer ul{list-style:none;display:grid;gap:4px}
+.footer li,.footer li a{font-size:.94rem;color:var(--muted);text-decoration:none}
+.footer li a{display:inline-flex;align-items:center;min-height:36px;transition:color .2s}
+.footer li a:hover{color:var(--laranja-texto)}
+.footer-bottom{background:var(--grafite);color:#B9BBBE;font-size:.82rem}
+.footer-bottom .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:20px;padding-bottom:20px}
+
+/* ===== WhatsApp flutuante ===== */
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:90;width:60px;height:60px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 14px 30px -10px rgba(0,0,0,.45);transition:transform .3s var(--ease)}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+.wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:pulse 2.6s ease-out infinite}
+@keyframes pulse{from{transform:scale(1);opacity:.8}to{transform:scale(1.6);opacity:0}}
+
+/* ===== Animações de entrada ===== */
+.js .rv{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.js .rv-l{opacity:0;transform:translateX(-40px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.js .rv-r{opacity:0;transform:translateX(40px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.js .rv-s{opacity:0;transform:scale(.94);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.js .in{opacity:1;transform:none}
+
+/* ===== Responsivo ===== */
+@media (max-width:1080px){
+  .nav a{padding:10px 10px}
+  .header .btn-sm{display:none}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media (max-width:900px){
+  .topbar .hide-sm{display:none}
+  .topbar .wrap{justify-content:center}
+  .header .wrap{height:72px}
+  .header.scrolled .wrap{height:64px}
+  .header{backdrop-filter:none;-webkit-backdrop-filter:none;background:#fff}
+  .header .logo,.header.scrolled .logo{font-size:12.5px}
+  .menu-btn{display:grid;place-items:center;width:48px;height:48px;border-radius:var(--radius);border:1px solid rgba(37,40,43,.15);background:#fff;cursor:pointer;flex:none}
+  .menu-btn span{position:relative;display:block;width:22px;height:2px;background:var(--grafite);transition:background .2s}
+  .menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:22px;height:2px;background:var(--grafite);transition:transform .3s var(--ease)}
+  .menu-btn span::before{top:-7px}.menu-btn span::after{top:7px}
+  .menu-open .menu-btn span{background:transparent}
+  .menu-open .menu-btn span::before{transform:translateY(7px) rotate(45deg)}
+  .menu-open .menu-btn span::after{transform:translateY(-7px) rotate(-45deg)}
+  .nav{position:fixed;left:0;right:0;top:var(--hh,72px);bottom:0;background:var(--grafite);flex-direction:column;align-items:stretch;gap:0;padding:12px var(--pad) 32px;transform:translateY(-8px);opacity:0;visibility:hidden;transition:opacity .3s,transform .35s var(--ease),visibility 0s .35s;overflow-y:auto}
+  .menu-open .nav{opacity:1;transform:none;visibility:visible;transition:opacity .3s,transform .35s var(--ease)}
+  .nav a{color:#fff;font-family:var(--font-title);font-stretch:85%;font-size:1.6rem;font-weight:800;text-transform:uppercase;padding:18px 0;border-bottom:1px solid rgba(167,169,172,.18)}
+  .nav a::after{display:none}
+  .nav a:hover{color:var(--laranja-claro)}
+  .nav .btn{display:flex;margin-top:28px;font-family:var(--font);font-size:1rem;text-transform:none;border-bottom:0;padding:0 24px;min-height:56px}
+  .menu-open{overflow:hidden}
+
+  .hero .wrap{grid-template-columns:1fr;gap:44px}
+  .hero-visual{height:auto;aspect-ratio:5/4}
+  .hv-main{inset:0 0 44px 28px}
+  .hv-badge{right:12px;bottom:64px;padding:10px 14px}
+  .hv-block{width:100px;height:100px;right:-14px;top:-14px}
+  .section-head{flex-direction:column;align-items:flex-start;gap:16px}
+  .prod-grid{grid-template-columns:1fr}
+  .prod-feature{grid-row:auto}
+  .prod-feature .prod-media{min-height:0;aspect-ratio:16/11;flex:none}
+  .sobre .wrap{grid-template-columns:1fr}
+  .sobre-visual{max-width:520px}
+  .dif-grid{grid-template-columns:1fr 1fr}
+  .galeria-grid{grid-template-columns:repeat(6,1fr);grid-auto-rows:120px;gap:10px}
+  .g1{grid-column:span 6;grid-row:span 2}.g2{grid-column:span 3;grid-row:span 3}
+  .g3{grid-column:span 3;grid-row:span 2}.g4{grid-column:span 3;grid-row:span 1}
+  .g5{grid-column:span 3;grid-row:span 2}.g6{grid-column:span 3;grid-row:span 2}
+  .gal figcaption{opacity:1;transform:none;font-size:.72rem;left:8px;bottom:8px;padding:5px 8px}
+  .local .wrap{grid-template-columns:1fr}
+  .map{min-height:320px}.map iframe{min-height:308px}
+  .cta .wrap{flex-direction:column;align-items:flex-start}
+}
+@media (max-width:600px){
+  body{font-size:15.5px}
+  .hero h1{font-size:clamp(2.35rem,11vw,3rem)}
+  .eyebrow{letter-spacing:.12em;font-size:.72rem}
+  .hero-actions{flex-direction:column}
+  .hero-actions .btn{width:100%;min-height:56px}
+  .hero-facts{grid-template-columns:1fr;gap:14px;margin-top:36px}
+  .hero-facts li{padding:0 0 0 14px;border-left:2px solid var(--laranja)}
+  .hero-facts li:first-child{padding-left:14px;border-left:2px solid var(--laranja)}
+  .hero-visual{aspect-ratio:1/1}
+  .hv-second{width:50%;border-width:4px}
+  .hv-badge strong{font-size:.9rem}.hv-badge span{font-size:.72rem}.hv-badge svg{width:28px;height:28px}
+  .ticker li{font-size:.92rem;padding:13px 16px;gap:16px}
+  .prod-side{grid-template-columns:1fr}
+  .prod-side .prod-media{aspect-ratio:16/10;height:auto;min-height:0}
+  .prod-body,.prod-side .prod-body{padding:22px}
+  .prod h3{font-size:1.35rem}
+  .prod .btn{width:100%}
+  .pilares{grid-template-columns:1fr}
+  .sobre-visual{padding:0 0 24px 24px}
+  .sobre-stamp{width:104px;height:104px;right:-6px;top:16px}
+  .sobre-stamp b{font-size:.9rem}
+  .dif-grid{grid-template-columns:1fr}
+  .dif-item{display:grid;grid-template-columns:56px 1fr;gap:4px 18px;align-items:start}
+  .dif-icon{grid-row:span 2;width:56px;height:56px;margin:0}
+  .galeria-grid{grid-auto-rows:96px}
+  .cta-side,.cta .btn-dark{width:100%}
+  .footer-top{grid-template-columns:1fr;gap:34px}
+  .footer .logo{font-size:11px}
+  .footer-bottom .wrap{flex-direction:column;gap:6px}
+  .wa-float{width:56px;height:56px;right:16px;bottom:16px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .rv,.js .rv-l,.js .rv-r,.js .rv-s{opacity:1;transform:none}
+}
+</style>
 </head>
 <body>
 
-    <!-- WA FLOAT -->
-    <a href="https://wa.me/5561992679699?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." class="wa-float" target="_blank" title="WhatsApp">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<!-- Símbolo da logo (copiado do arquivo original) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="logo-simbolo" viewBox="0 0 220 220">
+      <circle cx="110" cy="110" r="105" fill="none" stroke="#EE8434" stroke-width="3"/>
+      <circle cx="110" cy="110" r="95" fill="#0E4744"/>
+      <g transform="translate(15 11)">
+        <rect x="58" y="66" width="20" height="56" rx="2" fill="#F39A4F"/>
+        <rect x="82" y="46" width="24" height="76" rx="2" fill="#F39A4F"/>
+        <path d="M110 74 L120 62 L130 74 V122 H110 Z" fill="#F39A4F"/>
+        <g fill="#0E4744">
+          <rect x="62" y="74" width="4" height="6"/><rect x="70" y="74" width="4" height="6"/>
+          <rect x="62" y="84" width="4" height="6"/><rect x="70" y="84" width="4" height="6"/>
+          <rect x="62" y="94" width="4" height="6"/><rect x="70" y="94" width="4" height="6"/>
+          <rect x="62" y="104" width="4" height="6"/><rect x="70" y="104" width="4" height="6"/>
+          <rect x="87" y="54" width="5" height="6"/><rect x="96" y="54" width="5" height="6"/>
+          <rect x="87" y="64" width="5" height="6"/><rect x="96" y="64" width="5" height="6"/>
+          <rect x="87" y="74" width="5" height="6"/><rect x="96" y="74" width="5" height="6"/>
+          <rect x="87" y="84" width="5" height="6"/><rect x="96" y="84" width="5" height="6"/>
+          <rect x="87" y="94" width="5" height="6"/><rect x="96" y="94" width="5" height="6"/>
+          <rect x="87" y="104" width="5" height="6"/><rect x="96" y="104" width="5" height="6"/>
+          <rect x="114" y="80" width="4" height="6"/><rect x="122" y="80" width="4" height="6"/>
+          <rect x="114" y="90" width="4" height="6"/><rect x="122" y="90" width="4" height="6"/>
+          <rect x="114" y="100" width="4" height="6"/><rect x="122" y="100" width="4" height="6"/>
+          <rect x="114" y="110" width="4" height="6"/><rect x="122" y="110" width="4" height="6"/>
+        </g>
+        <rect x="30" y="122" width="12" height="30" rx="2" fill="#FBF3E8"/>
+        <path d="M46 124 H78 C86 124 90 130 86 134 H70 C66 134 66 138 70 138 H104 L150 116 C156 113 162 118 158 124 L124 148 C120 151 115 152 110 152 H46 Z" fill="#FBF3E8"/>
+      </g>
+    </symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.17-3.48-8.41z"/></symbol>
+  </defs>
+</svg>
+
+<a class="sr-only" href="#produtos">Pular para os produtos</a>
+
+<!-- Barra superior -->
+<div class="topbar">
+  <div class="wrap">
+    <p class="hide-sm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Park Way, Brasília - DF · Atendemos todo o DF e entorno</p>
+    <p><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Seg a Sex 08h–17h · Sáb 08h–12h <span class="hide-sm">·</span> <a class="hide-sm" href="https://wa.me/5561992679699" target="_blank" rel="noopener">(61) 99267-9699</a></p>
+  </div>
+</div>
+
+<!-- Cabeçalho -->
+<header class="header" id="topo">
+  <div class="wrap">
+    <a href="#inicio" class="logo" aria-label="Cardoso Pré-Moldados — página inicial">
+      <svg class="logo-mark" role="img" aria-label="Símbolo Cardoso pré-moldados"><use href="#logo-simbolo"/></svg>
+      <span class="logo-text">
+        <span class="logo-name"><b>CARDOSO</b> <span>PRÉ-MOLDADOS</span></span>
+        <span class="logo-tag"><i></i><span>blocos e canaletas</span><i></i></span>
+      </span>
     </a>
-
-    <!-- TOP BANNER WITH LOGO -->
-    <div class="top-banner">
-        <img src="imagens/logo.jpg" alt="Logo Cardoso">
-    </div>
-
-    <!-- NAV -->
-    <nav class="nav">
-        <div class="nav-inner">
-            <a href="#hero" class="nav-brand-link">Cardoso Pré-Moldados</a>
-            <ul class="nav-links">
-                <li><a href="#catalog">Produtos</a></li>
-                <li><a href="#location">Localização</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
-            <a href="https://wa.me/5561992679699?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." class="nav-cta" target="_blank">Orçamento →</a>
-        </div>
+    <nav class="nav" id="menu" aria-label="Menu principal">
+      <a href="#produtos">Produtos</a>
+      <a href="#empresa">A empresa</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#localizacao">Localização</a>
+      <a class="btn btn-primary btn-sm" href="https://wa.me/5561992679699?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir orçamento</a>
     </nav>
+    <button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+  </div>
+</header>
 
-    <!-- HERO -->
-    <section class="hero" id="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-grid"></div>
-        <div class="hero-inner">
-            <div class="hero-pill"><span></span> Park Way • Brasília - DF</div>
-            <h1><span class="highlight">Cardoso</span><br>Pré-Moldados</h1>
-            <p class="hero-sub">Blocos e artefatos de concreto de alta resistência. Qualidade, agilidade e entrega para todo o Distrito Federal e entorno.</p>
-            
-            <div class="hero-actions">
-                <a href="https://wa.me/5561992679699?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento." class="btn-primary" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    Solicitar Orçamento
-                </a>
-                <a href="#catalog" class="btn-secondary">Ver Produtos ↓</a>
-            </div>
-            
-            <div class="hero-carousel reveal">
-                <img src="imagens/hero-obra.jpg" alt="Obra em andamento utilizando blocos da Cardoso Pré-Moldados" class="carousel-slide active">
-                <img src="imagens/hero-patio.jpg" alt="Pátio da fábrica com paletes de blocos" class="carousel-slide">
-                <div class="carousel-dots">
-                    <span class="carousel-dot active" onclick="goToSlide(0)"></span>
-                    <span class="carousel-dot" onclick="goToSlide(1)"></span>
-                </div>
-            </div>
-            
-            <div class="hero-stat-row">
-                <div class="hero-stat"><h4>DF</h4><p>Todo o Distrito Federal</p></div>
-                <div class="hero-stat"><h4>08–17h</h4><p>Seg a Sex · Sáb 08–12h</p></div>
-                <div class="hero-stat"><h4>100%</h4><p>Qualidade</p></div>
-            </div>
+<main>
+
+<!-- HERO -->
+<section class="hero grain" id="inicio">
+  <div class="hero-blueprint" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-text">
+      <p class="eyebrow rv">Fábrica de pré-moldados · Park Way - DF</p>
+      <h1 class="rv" style="--d:.08s">Blocos de concreto que <em>sustentam</em> a sua obra</h1>
+      <p class="hero-sub rv" style="--d:.16s">A Cardoso Pré-Moldados fabrica blocos de concreto, canaletas, meias-calhas e bloquetes com alta resistência e entrega para Brasília, todo o Distrito Federal e entorno.</p>
+      <div class="hero-actions rv" style="--d:.24s">
+        <a class="btn btn-primary" href="https://wa.me/5561992679699?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Solicitar orçamento</a>
+        <a class="btn btn-ghost" href="#produtos">Conhecer os produtos<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+      </div>
+      <ul class="hero-facts rv" style="--d:.32s">
+        <li><strong>DF e entorno</strong><span>Área de atendimento</span></li>
+        <li><strong>Seg–Sex 08h–17h</strong><span>Sábado 08h–12h</span></li>
+        <li><strong>(61) 99267-9699</strong><span>WhatsApp</span></li>
+      </ul>
+    </div>
+    <div class="hero-visual rv-s" style="--d:.1s">
+      <div class="hv-block" aria-hidden="true"></div>
+      <div class="hv-main">
+        <img src="imagens/patio.webp" srcset="imagens/patio-800.webp 800w, imagens/patio.webp 1376w" sizes="(max-width: 900px) 100vw, 55vw" alt="Paletes de blocos de concreto prontos no pátio da fábrica" width="1376" height="768" fetchpriority="high" data-parallax>
+      </div>
+      <div class="hv-second">
+        <img src="imagens/obra-800.webp" alt="Obra em andamento construída com blocos de concreto" width="800" height="447" loading="lazy">
+      </div>
+      <div class="hv-badge">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="3" y="20" width="16" height="10" rx="1" fill="#D97732"/><rect x="21" y="20" width="16" height="10" rx="1" fill="#A7A9AC"/><rect x="12" y="8" width="16" height="10" rx="1" fill="#25282B"/><path d="M2 34h36" stroke="#25282B" stroke-width="2.5"/></svg>
+        <div><strong>Estoque pronto</strong><span>Grandes volumes</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Faixa -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <ul><li>Blocos de concreto</li><li>Canaletas</li><li>Meias-calhas</li><li>Bloquetes</li><li>Entrega rápida</li><li>Estoque pronto</li><li>Grandes volumes</li><li>Sob medida</li></ul>
+    <ul><li>Blocos de concreto</li><li>Canaletas</li><li>Meias-calhas</li><li>Bloquetes</li><li>Entrega rápida</li><li>Estoque pronto</li><li>Grandes volumes</li><li>Sob medida</li></ul>
+  </div>
+</div>
+
+<!-- PRODUTOS -->
+<section class="section produtos" id="produtos" aria-labelledby="t-produtos">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="label rv">Catálogo</p>
+        <h2 class="h2 rv" id="t-produtos" style="--d:.06s">Nossos produtos</h2>
+      </div>
+      <p class="lead rv" style="--d:.12s">Pré-moldados fabricados com rigoroso controle de qualidade, prontos para a sua obra.</p>
+    </div>
+    <div class="prod-grid">
+      <article class="prod prod-feature rv" style="--d:.05s">
+        <div class="prod-media">
+          <img src="imagens/blocos.webp" alt="Bloco de concreto em destaque sobre paletes" width="800" height="800" loading="lazy">
+          <span class="prod-num">01</span>
+          <span class="prod-flag">Carro-chefe</span>
         </div>
-    </section>
-
-    <!-- CATALOG -->
-    <section class="catalog" id="catalog">
-        <div class="catalog-inner">
-            <p class="section-label reveal">Catálogo</p>
-            <h2 class="section-heading reveal">Nossos Produtos</h2>
-            <p class="section-desc reveal">Pré-moldados fabricados com rigoroso controle de qualidade, prontos para sua obra.</p>
-            <div class="catalog-grid">
-                <div class="card reveal delay-1">
-                    <img src="imagens/blocos.jpg" alt="Blocos de Concreto" class="card-img">
-                    <div class="card-body">
-                        <h3>Blocos de Concreto</h3>
-                        <p>Blocos para alvenaria estrutural e alvenaria de vedação. Diversos tamanhos e especificações técnicas.</p>
-                        <a href="https://wa.me/5561992679699?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20Blocos%20de%20Concreto." class="card-link" target="_blank">
-                            Solicitar orçamento
-                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="card reveal delay-2">
-                    <img src="imagens/canaletas.jpg" alt="Canaletas" class="card-img zoom-img">
-                    <div class="card-body">
-                        <h3>Canaletas</h3>
-                        <p>Canaletas e meias-calhas em concreto para cintas, vergas e contravergas. Resistência e praticidade.</p>
-                        <a href="https://wa.me/5561992679699?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20Canaletas." class="card-link" target="_blank">
-                            Solicitar orçamento
-                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="card reveal delay-3">
-                    <img src="imagens/bloquetes.jpg" alt="Bloquetes" class="card-img">
-                    <div class="card-body">
-                        <h3>Bloquetes</h3>
-                        <p>Bloquetes para calçadas, estacionamentos, pátios e áreas externas. Diversas cores e modelos.</p>
-                        <a href="https://wa.me/5561992679699?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20Bloquetes." class="card-link" target="_blank">
-                            Solicitar orçamento
-                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div class="prod-body">
+          <h3>Blocos de concreto</h3>
+          <p>Blocos para alvenaria estrutural e alvenaria de vedação. Diversos tamanhos e especificações técnicas.</p>
+          <ul class="prod-uses"><li>Alvenaria estrutural</li><li>Alvenaria de vedação</li><li>Diversos tamanhos</li></ul>
+          <a class="btn btn-primary" href="https://wa.me/5561992679699?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Blocos%20de%20Concreto." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Orçamento de blocos</a>
         </div>
-    </section>
-
-    <!-- LOCATION -->
-    <section class="location" id="location">
-        <div class="location-inner">
-            <div class="reveal-left">
-                <p class="section-label">Localização</p>
-                <h2 class="section-heading">Onde Estamos</h2>
-                <p class="section-desc">Sede estratégica para atender com rapidez todo o Distrito Federal e entorno.</p>
-
-                <div class="loc-detail">
-                    <div class="loc-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
-                    <div><h4>Park Way, Brasília - DF</h4><p>Atendimento para todo o DF e entorno</p></div>
-                </div>
-                <div class="loc-detail">
-                    <div class="loc-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
-                    <div><h4>Horário de Funcionamento</h4><p>Seg a Sex: 08:00 – 17:00<br>Sábado: 08:00 – 12:00</p></div>
-                </div>
-                <div class="loc-detail">
-                    <div class="loc-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
-                    <div><h4>WhatsApp</h4><p>(61) 99267-9699</p></div>
-                </div>
-
-                <div class="loc-tags">
-                    <span class="loc-tag">🚚 Entrega Rápida</span>
-                    <span class="loc-tag">📦 Estoque Pronto</span>
-                    <span class="loc-tag">🏗️ Grandes Volumes</span>
-                    <span class="loc-tag">📐 Sob Medida</span>
-                </div>
-            </div>
-            <div class="location-map reveal-right">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3837.44!2d-47.9877829!3d-15.8862127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a397ba89570cf%3A0x984708f9c843f709!2sCardoso%20Pr%C3%A9-Moldados!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
+      </article>
+      <article class="prod prod-side rv" style="--d:.15s">
+        <div class="prod-media">
+          <img src="imagens/canaletas.webp" alt="Canaleta de concreto" width="800" height="800" loading="lazy">
+          <span class="prod-num">02</span>
         </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta" id="contact">
-        <div class="cta-inner reveal">
-            <h2>Pronto para construir?</h2>
-            <p>Solicite seu orçamento agora. Resposta rápida pelo WhatsApp!</p>
-            <a href="https://wa.me/5561992679699?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20de%20pré-moldados." class="btn-primary" target="_blank" style="font-size:1.1rem;padding:18px 40px">
-                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                Solicitar Orçamento no WhatsApp
-            </a>
+        <div class="prod-body">
+          <h3>Canaletas e meias-calhas</h3>
+          <p>Canaletas e meias-calhas em concreto para cintas, vergas e contravergas. Resistência e praticidade.</p>
+          <a class="prod-cta" href="https://wa.me/5561992679699?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Canaletas." target="_blank" rel="noopener">Solicitar orçamento<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-inner">
-            <div class="footer-grid">
-                <div>
-                    <div class="footer-brand">
-                        <img src="imagens/logo.jpg" alt="Logo">
-                        <span>Cardoso Pré-Moldados</span>
-                    </div>
-                    <p>Fabricação de blocos de concreto, canaletas, meias-calhas e bloquetes com qualidade comprovada para todo o DF.</p>
-                </div>
-                <div>
-                    <h5>Produtos</h5>
-                    <a href="#catalog">Blocos de Concreto</a>
-                    <a href="#catalog">Canaletas</a>
-                    <a href="#catalog">Bloquetes</a>
-                </div>
-                <div>
-                    <h5>Contato</h5>
-                    <a href="https://wa.me/5561992679699" target="_blank">📱 (61) 99267-9699</a>
-                    <p>📍 Park Way, Brasília - DF</p>
-                    <p>🕐 Seg a Sex · 08:00 – 17:00</p>
-                    <p>🕐 Sábado · 08:00 – 12:00</p>
-                    <a href="https://maps.app.goo.gl/DZ4xfc6Rin1j3MFt6" target="_blank" style="margin-top:8px">📌 Ver no Google Maps →</a>
-                </div>
-            </div>
-            <div class="footer-bottom">© 2026 Cardoso Pré-Moldados · Park Way, Brasília - DF · Todos os direitos reservados</div>
+      </article>
+      <article class="prod prod-side rv" style="--d:.25s">
+        <div class="prod-media">
+          <img src="imagens/bloquetes.webp" alt="Bloquete de concreto sobre piso intertravado" width="800" height="800" loading="lazy">
+          <span class="prod-num">03</span>
         </div>
-    </footer>
+        <div class="prod-body">
+          <h3>Bloquetes</h3>
+          <p>Bloquetes para calçadas, estacionamentos, pátios e áreas externas. Diversas cores e modelos.</p>
+          <a class="prod-cta" href="https://wa.me/5561992679699?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Bloquetes." target="_blank" rel="noopener">Solicitar orçamento<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <script>
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('.nav');
-            if(window.scrollY > 40) nav.classList.add('scrolled');
-            else nav.classList.remove('scrolled');
-        });
+<!-- INSTITUCIONAL -->
+<section class="section sobre" id="empresa" aria-labelledby="t-empresa">
+  <div class="wrap">
+    <div class="sobre-visual rv-l">
+      <div class="frame" aria-hidden="true"></div>
+      <img src="imagens/g-paletes.webp" alt="Paletes de blocos de concreto empilhados na fábrica" width="540" height="580" loading="lazy">
+      <div class="sobre-stamp" aria-hidden="true">
+        <svg viewBox="0 0 128 128"><defs><path id="circ" d="M64 64 m-50 0 a50 50 0 1 1 100 0 a50 50 0 1 1 -100 0"/></defs><text><textPath href="#circ">Qualidade · Resistência · Confiança ·</textPath></text></svg>
+        <b>Feito<br>no DF</b>
+      </div>
+    </div>
+    <div class="sobre-text">
+      <p class="label rv">A empresa</p>
+      <h2 class="h2 rv" id="t-empresa" style="--d:.06s">Concreto de qualidade, do pátio até a sua obra</h2>
+      <p class="rv" style="--d:.12s">A Cardoso Pré-Moldados fabrica blocos e artefatos de concreto no Park Way, em Brasília. Da produção à entrega, nosso trabalho é garantir material resistente, prazo cumprido e um atendimento direto, para obras de todos os tamanhos no Distrito Federal e entorno.</p>
+      <div class="pilares">
+        <div class="pilar rv" style="--d:.1s">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4l13 5v10c0 8-5.6 14-13 17C12.6 33 7 27 7 19V9z"/><path d="M14 20l4.5 4.5L27 16"/></svg>
+          <div><h3>Compromisso com a qualidade</h3><p>Fabricação com rigoroso controle de qualidade.</p></div>
+        </div>
+        <div class="pilar rv" style="--d:.18s">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="5" y="22" width="14" height="12"/><rect x="21" y="22" width="14" height="12"/><rect x="13" y="8" width="14" height="12"/></svg>
+          <div><h3>Produtos resistentes</h3><p>Blocos e artefatos de concreto de alta resistência.</p></div>
+        </div>
+        <div class="pilar rv" style="--d:.26s">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 30l4-4h14a4 4 0 0 0 4-4V12a4 4 0 0 0-4-4H12a4 4 0 0 0-4 4z"/><path d="M14 15h10M14 20h6"/></svg>
+          <div><h3>Atendimento de confiança</h3><p>Conversa direta e resposta rápida pelo WhatsApp.</p></div>
+        </div>
+        <div class="pilar rv" style="--d:.34s">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 35s-11-9.5-11-18a11 11 0 0 1 22 0c0 8.5-11 18-11 18z"/><circle cx="20" cy="17" r="4"/></svg>
+          <div><h3>Presença no DF e entorno</h3><p>Sede no Park Way, atendendo todo o Distrito Federal.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Intersection Observer for reveals
-        const obs = new IntersectionObserver(e => {
-            e.forEach(el => {
-                if(el.isIntersecting) {
-                    el.target.classList.add('visible');
-                    obs.unobserve(el.target); // Animates only once!
-                }
-            })
-        }, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
-        
-        document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
-        
-        // Smooth scroll for nav links
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', e => {
-                e.preventDefault();
-                const t = document.querySelector(a.getAttribute('href'));
-                if(t) t.scrollIntoView({behavior:'smooth', block:'start'});
-            });
-        });
-        
-        // Carousel Logic
-        let curSlide = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        const dots = document.querySelectorAll('.carousel-dot');
-        let autoPlay = setInterval(() => goToSlide(curSlide + 1), 4500);
+<!-- DIFERENCIAIS -->
+<section class="section dif grain" id="diferenciais" aria-labelledby="t-dif">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="label rv">Por que a Cardoso</p>
+        <h2 class="h2 rv" id="t-dif" style="--d:.06s">Nossos diferenciais</h2>
+      </div>
+      <p class="lead rv" style="--d:.12s">Estrutura para atender do pequeno reparo à obra de grande porte, com agilidade.</p>
+    </div>
+    <div class="dif-grid">
+      <div class="dif-item rv" style="--d:.05s">
+        <div class="dif-icon"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M3 10h20v17H3zM23 16h8l5 6v5H23z"/><circle cx="10" cy="29" r="3.2"/><circle cx="29" cy="29" r="3.2"/></svg></div>
+        <h3>Entrega rápida</h3><p>Logística ágil para levar o material até a sua obra.</p>
+      </div>
+      <div class="dif-item rv" style="--d:.12s">
+        <div class="dif-icon"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="7" y="8" width="26" height="8"/><rect x="7" y="16" width="26" height="8"/><path d="M4 28h32M8 28v5M20 28v5M32 28v5"/></svg></div>
+        <h3>Estoque pronto</h3><p>Produtos disponíveis para retirada e entrega.</p>
+      </div>
+      <div class="dif-item rv" style="--d:.19s">
+        <div class="dif-icon"><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="4" y="24" width="10" height="10"/><rect x="15" y="24" width="10" height="10"/><rect x="26" y="24" width="10" height="10"/><rect x="9" y="13" width="10" height="10"/><rect x="20" y="13" width="10" height="10"/><rect x="15" y="2" width="10" height="10"/></svg></div>
+        <h3>Grandes volumes</h3><p>Capacidade para atender obras de grande porte.</p>
+      </div>
+      <div class="dif-item rv" style="--d:.26s">
+        <div class="dif-icon"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 33L33 5l3 3L8 36z"/><path d="M12 26l3 3M17 21l2 2M21 17l3 3M26 12l2 2M30 8l3 3"/></svg></div>
+        <h3>Sob medida</h3><p>Atendimento às necessidades específicas do seu projeto.</p>
+      </div>
+      <div class="dif-item rv" style="--d:.33s">
+        <div class="dif-icon"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 36s-12-10-12-19a12 12 0 0 1 24 0c0 9-12 19-12 19z"/><path d="M15 17h10M20 12v10"/></svg></div>
+        <h3>Todo o DF e entorno</h3><p>Sede estratégica no Park Way para atender com rapidez.</p>
+      </div>
+      <div class="dif-item rv" style="--d:.4s">
+        <div class="dif-icon"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 34l2.3-7A14 14 0 1 1 14 32.4z"/><path d="M15 17c0 4.5 3.5 8 8 8l2-2-3-2-1.5 1.2a6 6 0 0 1-2.7-2.7L19 18l-2-3z"/></svg></div>
+        <h3>Orçamento pelo WhatsApp</h3><p>Peça seu orçamento e receba resposta rápida.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        window.goToSlide = (n) => {
-            slides[curSlide].classList.remove('active');
-            dots[curSlide].classList.remove('active');
-            curSlide = (n + slides.length) % slides.length;
-            slides[curSlide].classList.add('active');
-            dots[curSlide].classList.add('active');
-            clearInterval(autoPlay);
-            autoPlay = setInterval(() => goToSlide(curSlide + 1), 4500);
-        };
-    </script>
+<!-- GALERIA -->
+<section class="section galeria" id="galeria" aria-labelledby="t-gal">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="label rv">Galeria</p>
+        <h2 class="h2 rv" id="t-gal" style="--d:.06s">Produção, pátio e obras</h2>
+      </div>
+      <p class="lead rv" style="--d:.12s">Um pouco da nossa estrutura e dos produtos que saem da fábrica para as obras do DF.</p>
+    </div>
+    <div class="galeria-grid">
+      <button type="button" class="gal g1 rv-s" style="--d:.0s" data-full="imagens/obra.webp"><figure><img src="imagens/obra-800.webp" srcset="imagens/obra-800.webp 800w, imagens/obra.webp 1376w" sizes="(max-width:900px) 100vw, 60vw" alt="Obra em alvenaria de blocos de concreto" loading="lazy" width="1376" height="768"><figcaption>Alvenaria com blocos de concreto</figcaption></figure></button>
+      <button type="button" class="gal g2 rv-s" style="--d:.08s" data-full="imagens/g-paletes.webp"><figure><img src="imagens/g-paletes.webp" alt="Paletes de blocos empilhados" loading="lazy" width="540" height="580"><figcaption>Blocos paletizados</figcaption></figure></button>
+      <button type="button" class="gal g3 rv-s" style="--d:.12s" data-full="imagens/canaletas.webp"><figure><img src="imagens/canaletas.webp" alt="Canaleta de concreto no pátio" loading="lazy" width="800" height="800"><figcaption>Canaletas</figcaption></figure></button>
+      <button type="button" class="gal g4 rv-s" style="--d:.16s" data-full="imagens/g-textura.webp"><figure><img src="imagens/g-textura.webp" alt="Textura de um bloco de concreto" loading="lazy" width="700" height="533"><figcaption>Acabamento do bloco</figcaption></figure></button>
+      <button type="button" class="gal g5 rv-s" style="--d:.2s" data-full="imagens/bloquetes.webp"><figure><img src="imagens/bloquetes.webp" alt="Bloquetes assentados em piso intertravado" loading="lazy" width="800" height="800"><figcaption>Bloquetes</figcaption></figure></button>
+      <button type="button" class="gal g6 rv-s" style="--d:.24s" data-full="imagens/g-patio.webp"><figure><img src="imagens/g-patio.webp" alt="Pátio da fábrica com estoque de blocos" loading="lazy" width="1200" height="453"><figcaption>Pátio e estoque</figcaption></figure></button>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="section local" id="localizacao" aria-labelledby="t-local">
+  <div class="wrap">
+    <div>
+      <p class="label rv">Localização</p>
+      <h2 class="h2 rv" id="t-local" style="--d:.06s">Onde estamos</h2>
+      <p class="lead rv" style="--d:.12s" >Sede estratégica para atender com rapidez todo o Distrito Federal e entorno.</p>
+      <ul class="info-list">
+        <li class="rv" style="--d:.1s"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div><h3>Park Way, Brasília - DF</h3><a href="https://maps.app.goo.gl/DZ4xfc6Rin1j3MFt6" target="_blank" rel="noopener">Ver rota no Google Maps →</a></div></li>
+        <li class="rv" style="--d:.16s"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><h3>Horário de funcionamento</h3><p>Seg a Sex: 08:00 – 17:00<br>Sábado: 08:00 – 12:00</p></div></li>
+        <li class="rv" style="--d:.22s"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><h3>WhatsApp</h3><a href="https://wa.me/5561992679699" target="_blank" rel="noopener">(61) 99267-9699</a></div></li>
+      </ul>
+    </div>
+    <div class="map rv-r">
+      <iframe title="Mapa da Cardoso Pré-Moldados no Google Maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3837.44!2d-47.9877829!3d-15.8862127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a397ba89570cf%3A0x984708f9c843f709!2sCardoso%20Pr%C3%A9-Moldados!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta grain" id="contato" aria-labelledby="t-cta">
+  <svg class="cta-pattern" viewBox="0 0 300 200" aria-hidden="true" fill="#25282B"><g><rect x="0" y="0" width="96" height="44"/><rect x="102" y="0" width="96" height="44"/><rect x="204" y="0" width="96" height="44"/><rect x="51" y="50" width="96" height="44"/><rect x="153" y="50" width="96" height="44"/><rect x="0" y="100" width="96" height="44"/><rect x="102" y="100" width="96" height="44"/><rect x="204" y="100" width="96" height="44"/><rect x="51" y="150" width="96" height="44"/><rect x="153" y="150" width="96" height="44"/></g></svg>
+  <div class="wrap">
+    <div>
+      <h2 class="rv" id="t-cta">Pronto para construir?</h2>
+      <p class="rv" style="--d:.08s">Solicite agora o orçamento de blocos, canaletas ou bloquetes. Resposta rápida pelo WhatsApp.</p>
+    </div>
+    <div class="cta-side rv" style="--d:.16s">
+      <a class="btn btn-dark" href="https://wa.me/5561992679699?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20pr%C3%A9-moldados." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Solicitar orçamento no WhatsApp</a>
+      <a class="cta-phone" href="https://wa.me/5561992679699" target="_blank" rel="noopener">(61) 99267-9699</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- RODAPÉ -->
+<footer class="footer">
+  <div class="wrap footer-top">
+    <div>
+      <a href="#inicio" class="logo" aria-label="Cardoso Pré-Moldados — voltar ao início">
+        <svg class="logo-mark" role="img" aria-label="Símbolo Cardoso pré-moldados"><use href="#logo-simbolo"/></svg>
+        <span class="logo-text">
+          <span class="logo-name"><b>CARDOSO</b> <span>PRÉ-MOLDADOS</span></span>
+          <span class="logo-tag"><i></i><span>blocos e canaletas</span><i></i></span>
+        </span>
+      </a>
+      <p class="footer-about">Fabricação de blocos de concreto, canaletas, meias-calhas e bloquetes com qualidade comprovada para todo o DF e entorno.</p>
+    </div>
+    <div>
+      <h2>Navegação</h2>
+      <ul>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#empresa">A empresa</a></li>
+        <li><a href="#diferenciais">Diferenciais</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#localizacao">Localização</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Produtos</h2>
+      <ul>
+        <li><a href="#produtos">Blocos de concreto</a></li>
+        <li><a href="#produtos">Canaletas e meias-calhas</a></li>
+        <li><a href="#produtos">Bloquetes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Contato</h2>
+      <ul>
+        <li><a href="https://wa.me/5561992679699" target="_blank" rel="noopener">WhatsApp (61) 99267-9699</a></li>
+        <li><a href="https://maps.app.goo.gl/DZ4xfc6Rin1j3MFt6" target="_blank" rel="noopener">Park Way, Brasília - DF</a></li>
+        <li>Seg a Sex · 08:00 – 17:00</li>
+        <li>Sábado · 08:00 – 12:00</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="wrap">
+      <span>© <span id="ano">2026</span> Cardoso Pré-Moldados · Park Way, Brasília - DF</span>
+      <span>Todos os direitos reservados</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5561992679699?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+
+<dialog class="lightbox" id="lightbox" aria-label="Imagem ampliada">
+  <button class="lb-close" type="button" aria-label="Fechar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <img src="" alt="">
+  <p></p>
+</dialog>
+
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  root.classList.add('js');
+  var ano=d.getElementById('ano'); if(ano) ano.textContent=new Date().getFullYear();
+
+  // Cabeçalho ao rolar
+  var header=d.querySelector('.header');
+  function onScroll(){ header.classList.toggle('scrolled', window.scrollY>30); }
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // Menu mobile
+  var btn=d.querySelector('.menu-btn'), nav=d.getElementById('menu');
+  function setMenu(open){
+    root.style.setProperty('--hh', header.getBoundingClientRect().bottom+'px');
+    d.body.classList.toggle('menu-open', open);
+    btn.setAttribute('aria-expanded', open);
+    btn.setAttribute('aria-label', open?'Fechar menu':'Abrir menu');
+  }
+  btn.addEventListener('click', function(){ setMenu(!d.body.classList.contains('menu-open')); });
+  nav.addEventListener('click', function(e){ if(e.target.closest('a')) setMenu(false); });
+  window.addEventListener('keydown', function(e){ if(e.key==='Escape' && d.body.classList.contains('menu-open')) setMenu(false); });
+
+  // Animações de entrada
+  var els=d.querySelectorAll('.rv,.rv-l,.rv-r,.rv-s');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('in'); }); }
+  requestAnimationFrame(function(){ d.querySelector('.hero').classList.add('ready'); });
+
+  // Link ativo no menu
+  var links=[].slice.call(nav.querySelectorAll('a[href^="#"]'));
+  var secs=links.map(function(a){ return d.querySelector(a.getAttribute('href')); });
+  if('IntersectionObserver' in window){
+    var so=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ links.forEach(function(a){ a.classList.toggle('active', a.getAttribute('href')==='#'+en.target.id); }); } });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(function(s){ if(s) so.observe(s); });
+  }
+
+  // Parallax leve na foto principal
+  var px=d.querySelector('[data-parallax]'), reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(px && !reduce){
+    window.addEventListener('scroll', function(){
+      var y=window.scrollY; if(y<900) px.style.translate='0 '+(y*0.06)+'px';
+    },{passive:true});
+  }
+
+  // Galeria (ampliar)
+  var lb=d.getElementById('lightbox');
+  if(lb && typeof lb.showModal==='function'){
+    var lbImg=lb.querySelector('img'), lbCap=lb.querySelector('p');
+    d.querySelectorAll('.gal').forEach(function(g){
+      g.addEventListener('click', function(){
+        var img=g.querySelector('img');
+        lbImg.src=g.getAttribute('data-full'); lbImg.alt=img.alt;
+        lbCap.textContent=g.querySelector('figcaption').textContent;
+        lb.showModal();
+      });
+    });
+    lb.querySelector('.lb-close').addEventListener('click', function(){ lb.close(); });
+    lb.addEventListener('click', function(e){ if(e.target===lb) lb.close(); });
+  }
+})();
+</script>
 </body>
 </html>
