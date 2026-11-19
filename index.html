@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="imagens/patio.webp" imagesrcset="imagens/patio-800.webp 800w, imagens/patio.webp 1376w" imagesizes="(max-width: 900px) 100vw, 55vw">
+<link rel="preload" as="image" href="imagens/hero.webp" imagesrcset="imagens/hero-800.webp 800w, imagens/hero.webp 1600w" imagesizes="(max-width: 900px) 100vw, 55vw">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -199,7 +199,7 @@ section{scroll-margin-top:80px}
 .sobre .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(40px,6vw,88px);align-items:center}
 .sobre-visual{position:relative;padding:0 0 40px 40px}
 .sobre-visual .frame{position:absolute;left:0;bottom:0;width:62%;height:70%;border:2px solid var(--laranja);border-radius:var(--radius)}
-.sobre-visual img{position:relative;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius);box-shadow:0 40px 70px -35px rgba(28,30,32,.6)}
+.sobre-visual img{position:relative;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius);box-shadow:0 40px 70px -35px rgba(28,30,32,.6)}
 .sobre-stamp{position:absolute;right:-14px;top:28px;width:128px;height:128px;border-radius:50%;background:var(--grafite);color:#fff;display:grid;place-items:center;text-align:center;box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
 .sobre-stamp svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 22s linear infinite}
 .sobre-stamp text{font-family:var(--font);font-size:10.5px;font-weight:800;letter-spacing:.2em;fill:#E6E6E3;text-transform:uppercase}
@@ -475,10 +475,10 @@ section{scroll-margin-top:80px}
     <div class="hero-visual rv-s" style="--d:.1s">
       <div class="hv-block" aria-hidden="true"></div>
       <div class="hv-main">
-        <img src="imagens/patio.webp" srcset="imagens/patio-800.webp 800w, imagens/patio.webp 1376w" sizes="(max-width: 900px) 100vw, 55vw" alt="Paletes de blocos de concreto prontos no pátio da fábrica" width="1376" height="768" fetchpriority="high" data-parallax>
+        <img src="imagens/hero.webp" srcset="imagens/hero-800.webp 800w, imagens/hero.webp 1600w" sizes="(max-width: 900px) 100vw, 55vw" alt="Profissional assentando blocos de concreto em uma obra" width="1600" height="1066" fetchpriority="high" data-parallax>
       </div>
       <div class="hv-second">
-        <img src="imagens/obra-800.webp" alt="Obra em andamento construída com blocos de concreto" width="800" height="447" loading="lazy">
+        <img src="imagens/hero-paletes.webp" alt="Paletes de blocos de concreto empilhados" width="700" height="525" loading="lazy">
       </div>
       <div class="hv-badge">
         <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="3" y="20" width="16" height="10" rx="1" fill="#D97732"/><rect x="21" y="20" width="16" height="10" rx="1" fill="#A7A9AC"/><rect x="12" y="8" width="16" height="10" rx="1" fill="#25282B"/><path d="M2 34h36" stroke="#25282B" stroke-width="2.5"/></svg>
@@ -509,7 +509,7 @@ section{scroll-margin-top:80px}
     <div class="prod-grid">
       <article class="prod prod-feature rv" style="--d:.05s">
         <div class="prod-media">
-          <img src="imagens/blocos.webp" alt="Bloco de concreto em destaque sobre paletes" width="800" height="800" loading="lazy">
+          <img src="imagens/blocos.webp" alt="Blocos de concreto empilhados" width="1000" height="750" loading="lazy">
           <span class="prod-num">01</span>
           <span class="prod-flag">Carro-chefe</span>
         </div>
@@ -522,7 +522,7 @@ section{scroll-margin-top:80px}
       </article>
       <article class="prod prod-side rv" style="--d:.15s">
         <div class="prod-media">
-          <img src="imagens/canaletas.webp" alt="Canaleta de concreto" width="800" height="800" loading="lazy">
+          <img src="imagens/alvenaria.webp" alt="Assentamento de blocos de concreto com argamassa" width="1000" height="666" loading="lazy">
           <span class="prod-num">02</span>
         </div>
         <div class="prod-body">
@@ -533,7 +533,7 @@ section{scroll-margin-top:80px}
       </article>
       <article class="prod prod-side rv" style="--d:.25s">
         <div class="prod-media">
-          <img src="imagens/bloquetes.webp" alt="Bloquete de concreto sobre piso intertravado" width="800" height="800" loading="lazy">
+          <img src="imagens/bloquetes.webp" alt="Piso de blocos para pavimentação" width="1000" height="666" loading="lazy">
           <span class="prod-num">03</span>
         </div>
         <div class="prod-body">
@@ -551,7 +551,7 @@ section{scroll-margin-top:80px}
   <div class="wrap">
     <div class="sobre-visual rv-l">
       <div class="frame" aria-hidden="true"></div>
-      <img src="imagens/g-paletes.webp" alt="Paletes de blocos de concreto empilhados na fábrica" width="540" height="580" loading="lazy">
+      <img src="imagens/empresa.webp" alt="Pilhas de blocos de concreto paletizados" width="900" height="1125" loading="lazy">
       <div class="sobre-stamp" aria-hidden="true">
         <svg viewBox="0 0 128 128"><defs><path id="circ" d="M64 64 m-50 0 a50 50 0 1 1 100 0 a50 50 0 1 1 -100 0"/></defs><text><textPath href="#circ">Qualidade · Resistência · Confiança ·</textPath></text></svg>
         <b>Feito<br>no DF</b>
@@ -628,17 +628,17 @@ section{scroll-margin-top:80px}
     <div class="section-head">
       <div>
         <p class="label rv">Galeria</p>
-        <h2 class="h2 rv" id="t-gal" style="--d:.06s">Produção, pátio e obras</h2>
+        <h2 class="h2 rv" id="t-gal" style="--d:.06s">Do pátio para a obra</h2>
       </div>
-      <p class="lead rv" style="--d:.12s">Um pouco da nossa estrutura e dos produtos que saem da fábrica para as obras do DF.</p>
+      <p class="lead rv" style="--d:.12s">O universo do concreto e da construção civil, onde os nossos produtos fazem a diferença.</p>
     </div>
     <div class="galeria-grid">
-      <button type="button" class="gal g1 rv-s" style="--d:.0s" data-full="imagens/obra.webp"><figure><img src="imagens/obra-800.webp" srcset="imagens/obra-800.webp 800w, imagens/obra.webp 1376w" sizes="(max-width:900px) 100vw, 60vw" alt="Obra em alvenaria de blocos de concreto" loading="lazy" width="1376" height="768"><figcaption>Alvenaria com blocos de concreto</figcaption></figure></button>
-      <button type="button" class="gal g2 rv-s" style="--d:.08s" data-full="imagens/g-paletes.webp"><figure><img src="imagens/g-paletes.webp" alt="Paletes de blocos empilhados" loading="lazy" width="540" height="580"><figcaption>Blocos paletizados</figcaption></figure></button>
-      <button type="button" class="gal g3 rv-s" style="--d:.12s" data-full="imagens/canaletas.webp"><figure><img src="imagens/canaletas.webp" alt="Canaleta de concreto no pátio" loading="lazy" width="800" height="800"><figcaption>Canaletas</figcaption></figure></button>
-      <button type="button" class="gal g4 rv-s" style="--d:.16s" data-full="imagens/g-textura.webp"><figure><img src="imagens/g-textura.webp" alt="Textura de um bloco de concreto" loading="lazy" width="700" height="533"><figcaption>Acabamento do bloco</figcaption></figure></button>
-      <button type="button" class="gal g5 rv-s" style="--d:.2s" data-full="imagens/bloquetes.webp"><figure><img src="imagens/bloquetes.webp" alt="Bloquetes assentados em piso intertravado" loading="lazy" width="800" height="800"><figcaption>Bloquetes</figcaption></figure></button>
-      <button type="button" class="gal g6 rv-s" style="--d:.24s" data-full="imagens/g-patio.webp"><figure><img src="imagens/g-patio.webp" alt="Pátio da fábrica com estoque de blocos" loading="lazy" width="1200" height="453"><figcaption>Pátio e estoque</figcaption></figure></button>
+      <button type="button" class="gal g1 rv-s" data-full="imagens/g-maquinas.webp"><figure><img src="imagens/g-maquinas-800.webp" srcset="imagens/g-maquinas-800.webp 800w, imagens/g-maquinas.webp 1400w" sizes="(max-width:900px) 100vw, 60vw" alt="Caminhão betoneira e escavadeira em obra" loading="lazy" width="1400" height="933"><figcaption>Máquinas e equipamentos</figcaption></figure></button>
+      <button type="button" class="gal g2 rv-s" style="--d:.08s" data-full="imagens/g-estoque.webp"><figure><img src="imagens/g-estoque.webp" alt="Pilhas de blocos de concreto em pátio de estoque" loading="lazy" width="800" height="1066"><figcaption>Estoque paletizado</figcaption></figure></button>
+      <button type="button" class="gal g3 rv-s" style="--d:.12s" data-full="imagens/g-concretagem.webp"><figure><img src="imagens/g-concretagem.webp" alt="Equipe fazendo concretagem de laje" loading="lazy" width="1000" height="666"><figcaption>Concretagem</figcaption></figure></button>
+      <button type="button" class="gal g4 rv-s" style="--d:.16s" data-full="imagens/g-textura.webp"><figure><img src="imagens/g-textura.webp" alt="Textura de blocos de concreto empilhados" loading="lazy" width="800" height="600"><figcaption>Blocos de concreto</figcaption></figure></button>
+      <button type="button" class="gal g5 rv-s" style="--d:.2s" data-full="imagens/g-usina.webp"><figure><img src="imagens/g-usina.webp" alt="Usina com silos e pilha de agregados" loading="lazy" width="1000" height="668"><figcaption>Agregados e produção</figcaption></figure></button>
+      <button type="button" class="gal g6 rv-s" style="--d:.24s" data-full="imagens/g-obra.webp"><figure><img src="imagens/g-obra.webp" alt="Fundação de obra com armaduras e equipe" loading="lazy" width="1400" height="583"><figcaption>Obras de grande porte</figcaption></figure></button>
     </div>
   </div>
 </section>
