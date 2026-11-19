@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="imagens/hero.webp" imagesrcset="imagens/hero-800.webp 800w, imagens/hero.webp 1600w" imagesizes="(max-width: 900px) 100vw, 55vw">
+<link rel="preload" as="image" href="imagens/produto-bloco.webp">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -45,7 +45,7 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
   --grafite:#25282B; --grafite-2:#1C1E20; --escuro:#373B3F; --concreto:#A7A9AC;
-  --concreto-claro:#E6E6E3; --areia:#F2F2F0; --branco:#FFFFFF;
+  --concreto-claro:#E6E6E3; --areia:#ECE9E3; --branco:#FFFFFF;
   --laranja:#D97732; --laranja-texto:#A84F15; --laranja-claro:#F39A4F;
   --texto:#2E3236; --muted:#5B6066;
   --radius:6px; --max:1240px;
@@ -81,73 +81,80 @@ a{color:inherit}
 .logo-phone svg{width:.684em;height:.684em}
 .logo-phone span{font-size:.526em;font-weight:700;letter-spacing:.01em;white-space:nowrap}
 
-/* ===== Header ===== */
-.topbar{background:var(--grafite);color:var(--concreto);font-size:.8rem}
-.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:38px}
-.topbar p{display:flex;align-items:center;gap:8px}
-.topbar svg{width:14px;height:14px;stroke:var(--laranja-claro);fill:none;stroke-width:2}
-.topbar a{color:#fff;text-decoration:none;font-weight:600}
-.topbar a:hover{color:var(--laranja-claro)}
-.header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(37,40,43,.08);transition:box-shadow .35s var(--ease)}
-.header.scrolled{box-shadow:0 10px 30px -12px rgba(28,30,32,.25)}
-.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:88px;transition:height .35s var(--ease)}
-.header.scrolled .wrap{height:72px}
-.header .logo{transition:font-size .35s var(--ease)}
+/* ===== Header (transparente na capa) ===== */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .4s var(--ease),box-shadow .4s var(--ease),transform .4s var(--ease)}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;height:96px;transition:height .4s var(--ease)}
+.header.scrolled{background:rgba(255,255,255,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 12px 30px -18px rgba(28,30,32,.35)}
+.header.scrolled .wrap{height:74px}
+.header .logo{transition:font-size .4s var(--ease)}
 .header.scrolled .logo{font-size:13px}
-.nav{display:flex;align-items:center;gap:6px}
-.nav a{position:relative;text-decoration:none;font-weight:600;font-size:.92rem;color:var(--escuro);padding:10px 14px}
-.nav a::after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:2px;background:var(--laranja);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
-.nav a:hover::after,.nav a.active::after{transform:scaleX(1)}
-.nav a:hover{color:var(--grafite)}
+.nav-shell{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(37,40,43,.08);border-radius:100px;padding:6px 6px 6px 14px;box-shadow:0 10px 30px -18px rgba(28,30,32,.35);transition:background .4s,box-shadow .4s,border-color .4s}
+.header.scrolled .nav-shell{background:transparent;box-shadow:none;border-color:transparent}
+.nav{display:flex;align-items:center;gap:2px}
+.nav a{position:relative;text-decoration:none;font-weight:600;font-size:.9rem;color:var(--escuro);padding:10px 13px;border-radius:100px;transition:color .2s,background .2s}
+.nav a:hover{color:var(--grafite);background:rgba(37,40,43,.05)}
+.nav a.active{color:var(--laranja-texto)}
+.nav-cta{margin-left:6px}
 .menu-btn{display:none}
 
 /* ===== Botões ===== */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:var(--radius);font-family:var(--font);font-weight:700;font-size:.98rem;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:transform .25s var(--ease),background .25s,box-shadow .25s,color .25s,border-color .25s;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:100px;font-family:var(--font);font-weight:700;font-size:.98rem;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:transform .25s var(--ease),background .25s,box-shadow .25s,color .25s,border-color .25s;white-space:nowrap}
 .btn svg{width:20px;height:20px;flex:none}
-.btn-primary{background:var(--laranja);color:var(--grafite);box-shadow:0 10px 24px -10px rgba(217,119,50,.7)}
-.btn-primary:hover{transform:translateY(-2px);background:#E4864A;box-shadow:0 16px 30px -12px rgba(217,119,50,.85)}
+.btn-primary{background:var(--laranja);color:var(--grafite);box-shadow:0 12px 26px -12px rgba(217,119,50,.8)}
+.btn-primary:hover{transform:translateY(-2px);background:#E4864A;box-shadow:0 18px 32px -14px rgba(217,119,50,.9)}
 .btn-primary svg{fill:var(--grafite)}
-.btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}
-.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
-.btn-ghost svg{stroke:currentColor;fill:none;stroke-width:2;transition:transform .25s var(--ease)}
-.btn-ghost:hover svg{transform:translateY(3px)}
+.btn-line{border-color:rgba(37,40,43,.22);color:var(--grafite);background:rgba(255,255,255,.5)}
+.btn-line:hover{border-color:var(--grafite);background:#fff}
+.btn-line svg{stroke:currentColor;fill:none;stroke-width:2;transition:transform .25s var(--ease)}
+.btn-line:hover svg{transform:translateY(3px)}
 .btn-dark{background:var(--grafite);color:#fff}
 .btn-dark:hover{background:var(--escuro);transform:translateY(-2px)}
 .btn-dark svg{fill:#fff}
 .btn-sm{min-height:44px;padding:0 18px;font-size:.9rem}
 
-/* ===== Hero ===== */
-.hero{background:var(--grafite);color:#fff;overflow:hidden}
-.hero-blueprint{position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background-image:linear-gradient(rgba(167,169,172,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(167,169,172,.07) 1px,transparent 1px);
-  background-size:48px 48px;-webkit-mask-image:linear-gradient(100deg,#000 0%,rgba(0,0,0,.5) 55%,transparent 80%);mask-image:linear-gradient(100deg,#000 0%,rgba(0,0,0,.5) 55%,transparent 80%)}
-.hero .wrap{display:grid;grid-template-columns:1.02fr 1fr;gap:56px;align-items:center;padding-top:clamp(56px,7vw,96px);padding-bottom:clamp(64px,8vw,110px)}
-.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja-claro)}
+/* ===== HERO ===== */
+.hero{position:relative;background:var(--areia);overflow:hidden;isolation:isolate;min-height:min(900px,100vh)}
+.hero-panel{position:absolute;top:0;right:0;bottom:0;width:44%;background:var(--grafite);clip-path:polygon(22% 0,100% 0,100% 100%,0 100%);z-index:-2}
+.hero-panel::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(167,169,172,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(167,169,172,.09) 1px,transparent 1px);background-size:44px 44px}
+.hero-panel::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 55%,rgba(217,119,50,.22),transparent 55%)}
+.hero-word{position:absolute;left:-1vw;bottom:-3.2vw;font-family:var(--font-title);font-stretch:75%;font-weight:900;font-size:clamp(7rem,19vw,19rem);line-height:.8;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1.5px rgba(37,40,43,.09);text-transform:uppercase;z-index:-1;pointer-events:none;user-select:none;white-space:nowrap}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:center;padding-top:150px;padding-bottom:110px;min-height:inherit}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja-texto)}
 .eyebrow::before{content:"";width:28px;height:2px;background:var(--laranja)}
-.hero h1{font-family:var(--font-title);font-stretch:82%;font-weight:800;font-size:clamp(2.6rem,5.4vw,4.6rem);line-height:.98;letter-spacing:-.01em;text-transform:uppercase;margin:22px 0 24px}
+.hero h1{font-family:var(--font-title);font-stretch:80%;font-weight:900;font-size:clamp(2.8rem,5.6vw,5.2rem);line-height:.94;letter-spacing:-.01em;text-transform:uppercase;color:var(--grafite);margin:22px 0 24px}
 .hero h1 em{font-style:normal;color:var(--laranja)}
-.hero-sub{font-size:clamp(1rem,1.3vw,1.14rem);color:#C9CBCD;max-width:520px;margin-bottom:34px}
-.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
-.hero-facts{display:grid;grid-template-columns:repeat(3,auto);gap:0;margin-top:46px;border-top:1px solid rgba(167,169,172,.22);padding-top:24px;justify-content:start}
-.hero-facts li{list-style:none;padding:0 26px;border-left:1px solid rgba(167,169,172,.22)}
-.hero-facts li:first-child{padding-left:0;border-left:0}
-.hero-facts strong{display:block;font-family:var(--font-title);font-stretch:85%;font-size:1.12rem;font-weight:700;color:#fff;letter-spacing:.01em}
-.hero-facts span{font-size:.8rem;color:var(--concreto)}
-.hero-visual{position:relative;height:min(600px,62vw)}
-.hv-main{position:absolute;inset:0 0 56px 48px;border-radius:var(--radius);overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
-.hv-main img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 1.6s var(--ease)}
-.hero.ready .hv-main img{transform:scale(1)}
-.hv-main::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(28,30,32,.55))}
-.hv-second{position:absolute;left:0;bottom:0;width:44%;aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;border:6px solid var(--grafite);box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
-.hv-second img{width:100%;height:100%;object-fit:cover}
-.hv-block{position:absolute;right:-26px;top:-26px;width:150px;height:150px;z-index:-1;
-  background-image:radial-gradient(var(--laranja) 2px,transparent 2.5px);background-size:16px 16px;opacity:.55;animation:drift 9s ease-in-out infinite alternate}
-.hv-badge{position:absolute;right:22px;bottom:80px;background:#fff;color:var(--grafite);border-radius:var(--radius);padding:14px 18px;display:flex;align-items:center;gap:12px;box-shadow:0 20px 40px -18px rgba(0,0,0,.6);animation:float 5s ease-in-out infinite}
-.hv-badge svg{width:34px;height:34px;flex:none}
-.hv-badge strong{display:block;font-family:var(--font-title);font-stretch:85%;font-size:1rem;line-height:1.1}
-.hv-badge span{font-size:.78rem;color:var(--muted)}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes drift{from{transform:translate(0,0)}to{transform:translate(-10px,12px)}}
+.hero-sub{font-size:clamp(1rem,1.3vw,1.14rem);color:var(--muted);max-width:500px;margin-bottom:34px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:40px;list-style:none}
+.hero-facts li{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--escuro);font-weight:600}
+.hero-facts svg{width:20px;height:20px;stroke:var(--laranja-texto);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+.stage{position:relative;height:min(620px,46vw);min-height:420px}
+.stage-floor{position:absolute;left:12%;right:2%;bottom:6%;height:14%;background:radial-gradient(ellipse at center,rgba(0,0,0,.55),transparent 70%);filter:blur(6px);transform:translateZ(0)}
+.stage .prod{position:absolute;will-change:transform}
+.stage .prod img{width:100%;height:auto;filter:drop-shadow(0 40px 40px rgba(0,0,0,.45)) drop-shadow(0 8px 10px rgba(0,0,0,.25))}
+.p-bloco{width:58%;right:6%;top:4%;z-index:2}
+.p-canaleta{width:44%;left:2%;bottom:4%;z-index:3}
+.p-bloco .float{animation:floatA 7s ease-in-out infinite}
+.p-canaleta .float{animation:floatB 8s ease-in-out infinite}
+@keyframes floatA{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(-.6deg)}}
+@keyframes floatB{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.blueprint{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:visible}
+.blueprint path,.blueprint line,.blueprint circle{fill:none;stroke:var(--laranja);stroke-width:1.2}
+.blueprint .dash{stroke-dasharray:4 6;stroke:rgba(167,169,172,.55)}
+.blueprint .draw{stroke-dasharray:600;stroke-dashoffset:600;transition:stroke-dashoffset 2.2s var(--ease) .6s}
+.hero.ready .blueprint .draw{stroke-dashoffset:0}
+.tag{position:absolute;z-index:4;display:flex;align-items:center;gap:10px;background:#fff;color:var(--grafite);border-radius:100px;padding:8px 16px 8px 8px;box-shadow:0 18px 36px -18px rgba(0,0,0,.55);font-size:.82rem;font-weight:700;white-space:nowrap}
+.tag i{width:28px;height:28px;border-radius:50%;background:var(--laranja);display:grid;place-items:center;font-style:normal;color:var(--grafite);font-family:var(--font-title);font-stretch:80%;font-weight:900;font-size:.78rem}
+.tag-1{right:2%;top:2%}
+.tag-2{left:6%;bottom:44%}
+.stage-card{position:absolute;right:0;bottom:2%;z-index:4;background:rgba(37,40,43,.9);backdrop-filter:blur(8px);color:#fff;border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:16px 18px;display:flex;gap:14px;align-items:center;box-shadow:0 24px 40px -22px rgba(0,0,0,.7)}
+.stage-card svg{width:34px;height:34px;flex:none}
+.stage-card strong{display:block;font-family:var(--font-title);font-stretch:85%;font-size:1.02rem;line-height:1.1}
+.stage-card span{font-size:.78rem;color:#C9CBCD}
+.scroll-hint{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);width:26px;height:42px;border:2px solid rgba(37,40,43,.25);border-radius:20px;z-index:2}
+.scroll-hint::after{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--laranja);animation:scrollDot 2s ease-in-out infinite}
+@keyframes scrollDot{0%{transform:translateY(0);opacity:1}70%{transform:translateY(14px);opacity:0}100%{opacity:0}}
 
 /* ===== Faixa (ticker) ===== */
 .ticker{background:var(--laranja);color:var(--grafite);overflow:hidden;border-block:1px solid rgba(0,0,0,.08)}
@@ -167,40 +174,55 @@ section{scroll-margin-top:80px}
 .lead{color:var(--muted);font-size:1.05rem;max-width:460px}
 
 /* ===== Produtos ===== */
-.produtos{background:var(--areia)}
-.prod-grid{display:grid;grid-template-columns:1.25fr 1fr;grid-template-rows:auto auto;gap:24px}
-.prod{position:relative;background:#fff;border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;border:1px solid rgba(37,40,43,.07);transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
-.prod:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(28,30,32,.45)}
-.prod-media{position:relative;overflow:hidden;aspect-ratio:16/10;background:var(--concreto-claro)}
-.prod-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
-.prod:hover .prod-media img{transform:scale(1.06)}
-.prod-num{position:absolute;left:18px;top:16px;font-family:var(--font-title);font-stretch:75%;font-weight:900;font-size:1rem;color:#fff;background:rgba(28,30,32,.75);backdrop-filter:blur(6px);padding:6px 10px;border-radius:4px;letter-spacing:.06em}
-.prod-body{padding:26px 28px 28px;display:flex;flex-direction:column;gap:12px;flex:1}
-.prod h3{font-family:var(--font-title);font-stretch:85%;font-weight:800;font-size:1.5rem;text-transform:uppercase;color:var(--grafite);line-height:1.05}
-.prod p{color:var(--muted);font-size:.96rem}
-.prod-uses{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
-.prod-uses li{list-style:none;font-size:.78rem;font-weight:700;color:var(--escuro);background:var(--areia);border:1px solid rgba(37,40,43,.08);padding:6px 11px;border-radius:100px}
-.prod .btn{margin-top:auto;align-self:flex-start}
-.prod-cta{display:inline-flex;align-items:center;gap:10px;margin-top:auto;padding-top:8px;font-weight:800;color:var(--laranja-texto);text-decoration:none;min-height:44px}
-.prod-cta svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.2;transition:transform .3s var(--ease)}
-.prod-cta:hover svg{transform:translateX(5px)}
-.prod-feature{grid-row:span 2;background:var(--grafite);border:0}
-.prod-feature .prod-media{aspect-ratio:auto;flex:1;min-height:360px}
-.prod-feature h3{color:#fff;font-size:clamp(1.8rem,2.8vw,2.4rem)}
-.prod-feature p{color:#C9CBCD;font-size:1.02rem;max-width:520px}
-.prod-feature .prod-uses li{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:#E6E6E3}
-.prod-flag{position:absolute;right:18px;top:16px;background:var(--laranja);color:var(--grafite);font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:7px 12px;border-radius:4px}
-.prod-side{display:grid;grid-template-columns:42% 1fr}
-.prod-side .prod-media{aspect-ratio:auto;height:100%;min-height:260px}
-.prod-side .prod-body{padding:24px}
-.prod-side h3{font-size:1.3rem}
+.produtos{background:#fff;overflow:hidden}
+.feature{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center;margin-bottom:clamp(64px,8vw,110px)}
+.feature-visual{position:relative;padding-top:60px}
+.feature-panel{position:relative;background:var(--areia);border-radius:28px;aspect-ratio:5/4;overflow:hidden}
+.feature-panel::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(37,40,43,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(37,40,43,.06) 1px,transparent 1px);background-size:36px 36px}
+.feature-panel .num{position:absolute;left:28px;bottom:10px;font-family:var(--font-title);font-stretch:75%;font-weight:900;font-size:clamp(6rem,12vw,11rem);line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(37,40,43,.14)}
+.feature-cut{position:absolute;left:12%;right:10%;top:0;z-index:2;transition:transform .8s var(--ease)}
+.feature-cut img{width:100%;height:auto;filter:drop-shadow(0 40px 34px rgba(0,0,0,.35)) drop-shadow(0 6px 8px rgba(0,0,0,.2))}
+.feature:hover .feature-cut{transform:translateY(-10px) rotate(-1deg)}
+.feature-photo{position:absolute;right:-14px;bottom:-34px;width:42%;aspect-ratio:4/3;border-radius:18px;overflow:hidden;border:6px solid #fff;box-shadow:0 24px 50px -24px rgba(28,30,32,.55);z-index:3}
+.feature-photo img{width:100%;height:100%;object-fit:cover}
+.feature-text .flag{display:inline-block;background:var(--laranja);color:var(--grafite);font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:7px 12px;border-radius:100px;margin-bottom:18px}
+.feature-text h3{font-family:var(--font-title);font-stretch:80%;font-weight:900;font-size:clamp(2.2rem,4vw,3.4rem);line-height:.95;text-transform:uppercase;color:var(--grafite);margin-bottom:18px}
+.feature-text p{color:var(--muted);font-size:1.06rem;max-width:480px}
+.uses{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 30px;list-style:none}
+.uses li{font-size:.8rem;font-weight:700;color:var(--escuro);background:var(--areia);border:1px solid rgba(37,40,43,.08);padding:7px 13px;border-radius:100px}
+
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.card{position:relative;border-radius:28px;overflow:visible;transition:transform .5s var(--ease)}
+.card:hover{transform:translateY(-6px)}
+.card-dark{background:var(--grafite);color:#fff;padding:clamp(28px,3.5vw,44px);padding-top:clamp(200px,20vw,260px);margin-top:90px}
+.card-dark::before{content:"";position:absolute;inset:0;border-radius:inherit;background-image:linear-gradient(rgba(167,169,172,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(167,169,172,.07) 1px,transparent 1px);background-size:36px 36px;pointer-events:none}
+.card-cut{position:absolute;right:6%;top:-90px;width:min(62%,340px);z-index:2;transition:transform .8s var(--ease)}
+.card-cut img{width:100%;height:auto;filter:drop-shadow(0 34px 30px rgba(0,0,0,.55))}
+.card:hover .card-cut{transform:translateY(-10px) rotate(2deg)}
+.card .num-s{font-family:var(--font-title);font-stretch:75%;font-weight:900;font-size:1rem;letter-spacing:.08em;color:var(--laranja)}
+.card h3{position:relative;font-family:var(--font-title);font-stretch:82%;font-weight:900;font-size:clamp(1.7rem,2.6vw,2.2rem);line-height:1;text-transform:uppercase;margin:8px 0 12px}
+.card p{position:relative;font-size:.98rem;max-width:440px}
+.card-dark p{color:#C9CBCD}
+.card .btn{position:relative;margin-top:24px}
+.card-photo{background:var(--areia);overflow:hidden;margin-top:0}
+.card-photo .ph{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:28px 28px 0 0}
+.card-photo .ph img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.card-photo:hover .ph img{transform:scale(1.05)}
+.card-photo .ph-wrap{position:relative}
+.card-photo .inset{position:absolute;right:22px;bottom:-60px;width:118px;aspect-ratio:3/4;border-radius:16px;overflow:hidden;border:5px solid #fff;box-shadow:0 18px 34px -16px rgba(0,0,0,.5);z-index:2}
+.card-photo .inset img{width:100%;height:100%;object-fit:cover}
+.card-photo .body{padding:clamp(26px,3.2vw,40px);color:var(--grafite)}
+.card-photo p{color:var(--muted)}
+.card-photo .body{padding-right:160px}
 
 /* ===== Institucional ===== */
+.sobre{background:var(--areia)}
 .sobre .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(40px,6vw,88px);align-items:center}
 .sobre-visual{position:relative;padding:0 0 40px 40px}
 .sobre-visual .frame{position:absolute;left:0;bottom:0;width:62%;height:70%;border:2px solid var(--laranja);border-radius:var(--radius)}
-.sobre-visual img{position:relative;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius);box-shadow:0 40px 70px -35px rgba(28,30,32,.6)}
-.sobre-stamp{position:absolute;right:-14px;top:28px;width:128px;height:128px;border-radius:50%;background:var(--grafite);color:#fff;display:grid;place-items:center;text-align:center;box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
+.sobre-visual>img:first-of-type{position:relative;width:88%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius);box-shadow:0 40px 70px -35px rgba(28,30,32,.6)}
+.sobre-small{position:absolute;right:0;bottom:0;width:46%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius);border:6px solid var(--areia);box-shadow:0 30px 50px -25px rgba(28,30,32,.6);z-index:2}
+.sobre-stamp{position:absolute;right:4%;top:28px;z-index:3;width:128px;height:128px;border-radius:50%;background:var(--grafite);color:#fff;display:grid;place-items:center;text-align:center;box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
 .sobre-stamp svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 22s linear infinite}
 .sobre-stamp text{font-family:var(--font);font-size:10.5px;font-weight:800;letter-spacing:.2em;fill:#E6E6E3;text-transform:uppercase}
 .sobre-stamp b{font-family:var(--font-title);font-stretch:80%;font-size:1.05rem;line-height:1.05;color:var(--laranja-claro);text-transform:uppercase}
@@ -299,43 +321,50 @@ section{scroll-margin-top:80px}
 
 /* ===== Responsivo ===== */
 @media (max-width:1080px){
-  .nav a{padding:10px 10px}
-  .header .btn-sm{display:none}
+  .nav a{padding:10px 9px;font-size:.86rem}
+  .nav-cta{display:none}
   .footer-top{grid-template-columns:1fr 1fr}
 }
 @media (max-width:900px){
-  .topbar .hide-sm{display:none}
-  .topbar .wrap{justify-content:center}
-  .header .wrap{height:72px}
-  .header.scrolled .wrap{height:64px}
-  .header{backdrop-filter:none;-webkit-backdrop-filter:none;background:#fff}
+  .header .wrap,.header.scrolled .wrap{height:72px}
   .header .logo,.header.scrolled .logo{font-size:12.5px}
-  .menu-btn{display:grid;place-items:center;width:48px;height:48px;border-radius:var(--radius);border:1px solid rgba(37,40,43,.15);background:#fff;cursor:pointer;flex:none}
-  .menu-btn span{position:relative;display:block;width:22px;height:2px;background:var(--grafite);transition:background .2s}
-  .menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:22px;height:2px;background:var(--grafite);transition:transform .3s var(--ease)}
-  .menu-btn span::before{top:-7px}.menu-btn span::after{top:7px}
+  .nav-shell{background:transparent;border:0;box-shadow:none;padding:0;backdrop-filter:none;-webkit-backdrop-filter:none}
+  .header.menu-open-h{background:#fff}
+  .menu-btn{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;border:1px solid rgba(37,40,43,.15);background:#fff;cursor:pointer;flex:none;box-shadow:0 8px 20px -12px rgba(0,0,0,.4)}
+  .menu-btn span{position:relative;display:block;width:20px;height:2px;background:var(--grafite);transition:background .2s}
+  .menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--grafite);transition:transform .3s var(--ease)}
+  .menu-btn span::before{top:-6px}.menu-btn span::after{top:6px}
   .menu-open .menu-btn span{background:transparent}
-  .menu-open .menu-btn span::before{transform:translateY(7px) rotate(45deg)}
-  .menu-open .menu-btn span::after{transform:translateY(-7px) rotate(-45deg)}
-  .nav{position:fixed;left:0;right:0;top:var(--hh,72px);bottom:0;background:var(--grafite);flex-direction:column;align-items:stretch;gap:0;padding:12px var(--pad) 32px;transform:translateY(-8px);opacity:0;visibility:hidden;transition:opacity .3s,transform .35s var(--ease),visibility 0s .35s;overflow-y:auto}
+  .menu-open .menu-btn span::before{transform:translateY(6px) rotate(45deg)}
+  .menu-open .menu-btn span::after{transform:translateY(-6px) rotate(-45deg)}
+  .nav{position:fixed;left:0;right:0;top:72px;bottom:0;background:var(--grafite);flex-direction:column;align-items:stretch;gap:0;padding:16px var(--pad) 32px;transform:translateY(-8px);opacity:0;visibility:hidden;transition:opacity .3s,transform .35s var(--ease),visibility 0s .35s;overflow-y:auto}
   .menu-open .nav{opacity:1;transform:none;visibility:visible;transition:opacity .3s,transform .35s var(--ease)}
-  .nav a{color:#fff;font-family:var(--font-title);font-stretch:85%;font-size:1.6rem;font-weight:800;text-transform:uppercase;padding:18px 0;border-bottom:1px solid rgba(167,169,172,.18)}
-  .nav a::after{display:none}
-  .nav a:hover{color:var(--laranja-claro)}
-  .nav .btn{display:flex;margin-top:28px;font-family:var(--font);font-size:1rem;text-transform:none;border-bottom:0;padding:0 24px;min-height:56px}
+  .nav a{color:#fff;font-family:var(--font-title);font-stretch:85%;font-size:1.6rem;font-weight:800;text-transform:uppercase;padding:18px 0;border-radius:0;border-bottom:1px solid rgba(167,169,172,.18)}
+  .nav a:hover{background:transparent;color:var(--laranja-claro)}
+  .nav a.active{color:#fff}
+  .nav .nav-cta{display:flex;margin:28px 0 0;font-family:var(--font);font-size:1rem;text-transform:none;border-bottom:0;padding:0 24px;min-height:56px;border-radius:100px;color:var(--grafite)}
   .menu-open{overflow:hidden}
+  .menu-open .header{background:#fff}
 
-  .hero .wrap{grid-template-columns:1fr;gap:44px}
-  .hero-visual{height:auto;aspect-ratio:5/4}
-  .hv-main{inset:0 0 44px 28px}
-  .hv-badge{right:12px;bottom:64px;padding:10px 14px}
-  .hv-block{width:100px;height:100px;right:-14px;top:-14px}
+  .hero{min-height:0}
+  .hero .wrap{grid-template-columns:1fr;gap:20px;padding-top:112px;padding-bottom:0}
+  .hero-panel{top:auto;height:330px;width:100%;clip-path:polygon(0 18%,100% 0,100% 100%,0 100%)}
+  .hero-word{bottom:auto;top:96px;font-size:28vw;-webkit-text-stroke:1px rgba(37,40,43,.07)}
+  .stage{height:400px;min-height:0;max-width:520px;width:100%;margin:0 auto}
+  .p-bloco{width:56%;right:4%;top:6%}
+  .p-canaleta{width:44%;left:2%;bottom:10%}
+  .tag-1{right:0;top:0}
+  .tag-2{left:0;bottom:56%}
+  .stage-card{right:0;bottom:4%;padding:12px 14px}
+  .stage-card svg{width:28px;height:28px}
+  .scroll-hint{display:none}
+
   .section-head{flex-direction:column;align-items:flex-start;gap:16px}
-  .prod-grid{grid-template-columns:1fr}
-  .prod-feature{grid-row:auto}
-  .prod-feature .prod-media{min-height:0;aspect-ratio:16/11;flex:none}
+  .feature{grid-template-columns:1fr;gap:56px}
+  .duo{grid-template-columns:1fr;gap:40px}
+  .card-dark{margin-top:80px}
   .sobre .wrap{grid-template-columns:1fr}
-  .sobre-visual{max-width:520px}
+  .sobre-visual{max-width:540px}
   .dif-grid{grid-template-columns:1fr 1fr}
   .galeria-grid{grid-template-columns:repeat(6,1fr);grid-auto-rows:120px;gap:10px}
   .g1{grid-column:span 6;grid-row:span 2}.g2{grid-column:span 3;grid-row:span 3}
@@ -348,25 +377,31 @@ section{scroll-margin-top:80px}
 }
 @media (max-width:600px){
   body{font-size:15.5px}
-  .hero h1{font-size:clamp(2.35rem,11vw,3rem)}
   .eyebrow{letter-spacing:.12em;font-size:.72rem}
+  .hero h1{font-size:clamp(2.5rem,12vw,3.3rem)}
   .hero-actions{flex-direction:column}
   .hero-actions .btn{width:100%;min-height:56px}
-  .hero-facts{grid-template-columns:1fr;gap:14px;margin-top:36px}
-  .hero-facts li{padding:0 0 0 14px;border-left:2px solid var(--laranja)}
-  .hero-facts li:first-child{padding-left:14px;border-left:2px solid var(--laranja)}
-  .hero-visual{aspect-ratio:1/1}
-  .hv-second{width:50%;border-width:4px}
-  .hv-badge strong{font-size:.9rem}.hv-badge span{font-size:.72rem}.hv-badge svg{width:28px;height:28px}
+  .hero-facts{flex-direction:column;gap:10px;margin-top:28px}
+  .stage{height:340px}
+  .tag{font-size:.74rem;padding:6px 12px 6px 6px}.tag i{width:24px;height:24px;font-size:.7rem}
+  .stage-card strong{font-size:.9rem}.stage-card span{font-size:.72rem}
   .ticker li{font-size:.92rem;padding:13px 16px;gap:16px}
-  .prod-side{grid-template-columns:1fr}
-  .prod-side .prod-media{aspect-ratio:16/10;height:auto;min-height:0}
-  .prod-body,.prod-side .prod-body{padding:22px}
-  .prod h3{font-size:1.35rem}
-  .prod .btn{width:100%}
+  .feature-visual{padding-top:40px}
+  .feature-panel{border-radius:22px}
+  .feature-photo{width:46%;right:-6px;bottom:-26px;border-width:4px;border-radius:14px}
+  .feature-text .btn,.card .btn{width:100%}
+  .card{border-radius:22px}
+  .card-dark{padding-top:180px;margin-top:70px}
+  .card-cut{top:-70px;width:64%}
+  .card-photo .ph{border-radius:22px 22px 0 0}
+  .card-photo .body{padding:24px 22px 26px}
+  .card-photo .body h3{padding-right:110px}
+  .card-photo .inset{width:96px;right:16px;bottom:-48px;border-width:4px}
   .pilares{grid-template-columns:1fr}
-  .sobre-visual{padding:0 0 24px 24px}
-  .sobre-stamp{width:104px;height:104px;right:-6px;top:16px}
+  .sobre-visual{padding:0 0 30px 0}
+  .sobre-small{width:44%!important}
+  .sobre-small{position:absolute;right:0;bottom:0;width:46%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius);border:6px solid var(--areia);box-shadow:0 30px 50px -25px rgba(28,30,32,.6);z-index:2}
+.sobre-stamp{width:104px;height:104px;right:-4px;top:16px}
   .sobre-stamp b{font-size:.9rem}
   .dif-grid{grid-template-columns:1fr}
   .dif-item{display:grid;grid-template-columns:56px 1fr;gap:4px 18px;align-items:start}
@@ -381,6 +416,7 @@ section{scroll-margin-top:80px}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .js .rv,.js .rv-l,.js .rv-r,.js .rv-s{opacity:1;transform:none}
+  .blueprint .draw{stroke-dashoffset:0}
 }
 </style>
 </head>
@@ -422,14 +458,6 @@ section{scroll-margin-top:80px}
 
 <a class="sr-only" href="#produtos">Pular para os produtos</a>
 
-<!-- Barra superior -->
-<div class="topbar">
-  <div class="wrap">
-    <p class="hide-sm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Park Way, Brasília - DF · Atendemos todo o DF e entorno</p>
-    <p><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Seg a Sex 08h–17h · Sáb 08h–12h <span class="hide-sm">·</span> <a class="hide-sm" href="https://wa.me/5561992679699" target="_blank" rel="noopener">(61) 99267-9699</a></p>
-  </div>
-</div>
-
 <!-- Cabeçalho -->
 <header class="header" id="topo">
   <div class="wrap">
@@ -440,52 +468,60 @@ section{scroll-margin-top:80px}
         <span class="logo-tag"><i></i><span>blocos e canaletas</span><i></i></span>
       </span>
     </a>
-    <nav class="nav" id="menu" aria-label="Menu principal">
-      <a href="#produtos">Produtos</a>
-      <a href="#empresa">A empresa</a>
-      <a href="#diferenciais">Diferenciais</a>
-      <a href="#galeria">Galeria</a>
-      <a href="#localizacao">Localização</a>
-      <a class="btn btn-primary btn-sm" href="https://wa.me/5561992679699?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir orçamento</a>
-    </nav>
-    <button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+    <div class="nav-shell">
+      <nav class="nav" id="menu" aria-label="Menu principal">
+        <a href="#produtos">Produtos</a>
+        <a href="#empresa">A empresa</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#localizacao">Localização</a>
+        <a class="btn btn-primary btn-sm nav-cta" href="https://wa.me/5561992679699?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir orçamento</a>
+      </nav>
+      <button class="menu-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+    </div>
   </div>
 </header>
 
 <main>
 
 <!-- HERO -->
-<section class="hero grain" id="inicio">
-  <div class="hero-blueprint" aria-hidden="true"></div>
+<section class="hero" id="inicio">
+  <div class="hero-panel" aria-hidden="true"></div>
+  <div class="hero-word" aria-hidden="true">Concreto</div>
   <div class="wrap">
     <div class="hero-text">
-      <p class="eyebrow rv">Fábrica de pré-moldados · Park Way - DF</p>
+      <p class="eyebrow rv">Pré-moldados · Park Way, Brasília - DF</p>
       <h1 class="rv" style="--d:.08s">Blocos de concreto que <em>sustentam</em> a sua obra</h1>
-      <p class="hero-sub rv" style="--d:.16s">A Cardoso Pré-Moldados fabrica blocos de concreto, canaletas, meias-calhas e bloquetes com alta resistência e entrega para Brasília, todo o Distrito Federal e entorno.</p>
+      <p class="hero-sub rv" style="--d:.16s">Fabricamos blocos de concreto, canaletas, meias-calhas e bloquetes de alta resistência, com entrega para Brasília, todo o Distrito Federal e entorno.</p>
       <div class="hero-actions rv" style="--d:.24s">
         <a class="btn btn-primary" href="https://wa.me/5561992679699?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Solicitar orçamento</a>
-        <a class="btn btn-ghost" href="#produtos">Conhecer os produtos<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+        <a class="btn btn-line" href="#produtos">Conhecer os produtos<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
       </div>
       <ul class="hero-facts rv" style="--d:.32s">
-        <li><strong>DF e entorno</strong><span>Área de atendimento</span></li>
-        <li><strong>Seg–Sex 08h–17h</strong><span>Sábado 08h–12h</span></li>
-        <li><strong>(61) 99267-9699</strong><span>WhatsApp</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Todo o DF e entorno</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Seg a Sex 08h–17h · Sáb 08h–12h</li>
       </ul>
     </div>
-    <div class="hero-visual rv-s" style="--d:.1s">
-      <div class="hv-block" aria-hidden="true"></div>
-      <div class="hv-main">
-        <img src="imagens/hero.webp" srcset="imagens/hero-800.webp 800w, imagens/hero.webp 1600w" sizes="(max-width: 900px) 100vw, 55vw" alt="Profissional assentando blocos de concreto em uma obra" width="1600" height="1066" fetchpriority="high" data-parallax>
-      </div>
-      <div class="hv-second">
-        <img src="imagens/hero-paletes.webp" alt="Paletes de blocos de concreto empilhados" width="700" height="525" loading="lazy">
-      </div>
-      <div class="hv-badge">
-        <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="3" y="20" width="16" height="10" rx="1" fill="#D97732"/><rect x="21" y="20" width="16" height="10" rx="1" fill="#A7A9AC"/><rect x="12" y="8" width="16" height="10" rx="1" fill="#25282B"/><path d="M2 34h36" stroke="#25282B" stroke-width="2.5"/></svg>
-        <div><strong>Estoque pronto</strong><span>Grandes volumes</span></div>
+    <div class="stage" data-stage>
+      <div class="stage-floor" aria-hidden="true"></div>
+      <svg class="blueprint" viewBox="0 0 600 600" preserveAspectRatio="none" aria-hidden="true">
+        <line class="dash" x1="0" y1="560" x2="600" y2="560"/>
+        <line class="dash" x1="560" y1="0" x2="560" y2="600"/>
+        <path class="draw" d="M150 40 H40 V150"/>
+        <path class="draw" d="M450 590 H580 V470"/>
+        <circle class="draw" cx="300" cy="300" r="250" style="stroke:rgba(217,119,50,.35)"/>
+      </svg>
+      <div class="prod p-bloco" data-depth="18"><div class="float"><img src="imagens/produto-bloco.webp" alt="Bloco de concreto da Cardoso Pré-Moldados" width="547" height="616" fetchpriority="high"></div></div>
+      <div class="prod p-canaleta" data-depth="32"><div class="float"><img src="imagens/produto-canaleta.webp" alt="Canaleta de concreto" width="657" height="737"></div></div>
+      <span class="tag tag-1 rv" style="--d:.5s"><i>01</i>Bloco de concreto</span>
+      <span class="tag tag-2 rv" style="--d:.65s"><i>02</i>Canaleta</span>
+      <div class="stage-card rv" style="--d:.8s">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="3" y="20" width="16" height="10" rx="1" fill="#D97732"/><rect x="21" y="20" width="16" height="10" rx="1" fill="#A7A9AC"/><rect x="12" y="8" width="16" height="10" rx="1" fill="#E6E6E3"/><path d="M2 34h36" stroke="#E6E6E3" stroke-width="2.5"/></svg>
+        <div><strong>Estoque pronto</strong><span>Grandes volumes · entrega rápida</span></div>
       </div>
     </div>
   </div>
+  <a class="scroll-hint" href="#produtos" aria-label="Rolar até os produtos"></a>
 </section>
 
 <!-- Faixa -->
@@ -506,40 +542,40 @@ section{scroll-margin-top:80px}
       </div>
       <p class="lead rv" style="--d:.12s">Pré-moldados fabricados com rigoroso controle de qualidade, prontos para a sua obra.</p>
     </div>
-    <div class="prod-grid">
-      <article class="prod prod-feature rv" style="--d:.05s">
-        <div class="prod-media">
-          <img src="imagens/blocos.webp" alt="Blocos de concreto empilhados" width="1000" height="750" loading="lazy">
-          <span class="prod-num">01</span>
-          <span class="prod-flag">Carro-chefe</span>
-        </div>
-        <div class="prod-body">
-          <h3>Blocos de concreto</h3>
-          <p>Blocos para alvenaria estrutural e alvenaria de vedação. Diversos tamanhos e especificações técnicas.</p>
-          <ul class="prod-uses"><li>Alvenaria estrutural</li><li>Alvenaria de vedação</li><li>Diversos tamanhos</li></ul>
-          <a class="btn btn-primary" href="https://wa.me/5561992679699?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Blocos%20de%20Concreto." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Orçamento de blocos</a>
-        </div>
+
+    <article class="feature">
+      <div class="feature-visual rv-l">
+        <div class="feature-panel"><span class="num" aria-hidden="true">01</span></div>
+        <div class="feature-cut" data-depth="10"><img src="imagens/produto-bloco.webp" alt="Bloco de concreto" width="547" height="616" loading="lazy"></div>
+        <div class="feature-photo"><img src="imagens/foto-blocos.webp" alt="Blocos de concreto paletizados no pátio" width="1000" height="750" loading="lazy"></div>
+      </div>
+      <div class="feature-text rv-r">
+        <span class="flag">Carro-chefe</span>
+        <h3>Blocos de concreto</h3>
+        <p>Blocos para alvenaria estrutural e alvenaria de vedação. Diversos tamanhos e especificações técnicas.</p>
+        <ul class="uses"><li>Alvenaria estrutural</li><li>Alvenaria de vedação</li><li>Diversos tamanhos</li></ul>
+        <a class="btn btn-primary" href="https://wa.me/5561992679699?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Blocos%20de%20Concreto." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Orçamento de blocos</a>
+      </div>
+    </article>
+
+    <div class="duo">
+      <article class="card card-dark rv" style="--d:.05s">
+        <div class="card-cut"><img src="imagens/produto-canaleta.webp" alt="Canaleta de concreto" width="657" height="737" loading="lazy"></div>
+        <span class="num-s">02</span>
+        <h3>Canaletas e meias-calhas</h3>
+        <p>Canaletas e meias-calhas em concreto para cintas, vergas e contravergas. Resistência e praticidade.</p>
+        <a class="btn btn-primary" href="https://wa.me/5561992679699?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Canaletas." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Orçamento de canaletas</a>
       </article>
-      <article class="prod prod-side rv" style="--d:.15s">
-        <div class="prod-media">
-          <img src="imagens/alvenaria.webp" alt="Assentamento de blocos de concreto com argamassa" width="1000" height="666" loading="lazy">
-          <span class="prod-num">02</span>
+      <article class="card card-photo rv" style="--d:.15s">
+        <div class="ph-wrap">
+          <div class="ph"><img src="imagens/foto-bloquetes-palete.webp" alt="Palete de bloquetes de concreto" width="1100" height="735" loading="lazy"></div>
+          <div class="inset"><img src="imagens/foto-bloquete.webp" alt="Bloquete de concreto em detalhe" width="480" height="640" loading="lazy"></div>
         </div>
-        <div class="prod-body">
-          <h3>Canaletas e meias-calhas</h3>
-          <p>Canaletas e meias-calhas em concreto para cintas, vergas e contravergas. Resistência e praticidade.</p>
-          <a class="prod-cta" href="https://wa.me/5561992679699?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Canaletas." target="_blank" rel="noopener">Solicitar orçamento<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </article>
-      <article class="prod prod-side rv" style="--d:.25s">
-        <div class="prod-media">
-          <img src="imagens/bloquetes.webp" alt="Piso de blocos para pavimentação" width="1000" height="666" loading="lazy">
-          <span class="prod-num">03</span>
-        </div>
-        <div class="prod-body">
+        <div class="body">
+          <span class="num-s">03</span>
           <h3>Bloquetes</h3>
           <p>Bloquetes para calçadas, estacionamentos, pátios e áreas externas. Diversas cores e modelos.</p>
-          <a class="prod-cta" href="https://wa.me/5561992679699?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Bloquetes." target="_blank" rel="noopener">Solicitar orçamento<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-dark" href="https://wa.me/5561992679699?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Bloquetes." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Orçamento de bloquetes</a>
         </div>
       </article>
     </div>
@@ -551,7 +587,8 @@ section{scroll-margin-top:80px}
   <div class="wrap">
     <div class="sobre-visual rv-l">
       <div class="frame" aria-hidden="true"></div>
-      <img src="imagens/empresa.webp" alt="Pilhas de blocos de concreto paletizados" width="900" height="1125" loading="lazy">
+      <img src="imagens/foto-estoque.webp" alt="Pilhas de blocos de concreto paletizados no estoque" width="681" height="557" loading="lazy">
+      <img class="sobre-small" src="imagens/foto-estoque-2.webp" alt="Fileiras de paletes de blocos de concreto" width="450" height="450" loading="lazy">
       <div class="sobre-stamp" aria-hidden="true">
         <svg viewBox="0 0 128 128"><defs><path id="circ" d="M64 64 m-50 0 a50 50 0 1 1 100 0 a50 50 0 1 1 -100 0"/></defs><text><textPath href="#circ">Qualidade · Resistência · Confiança ·</textPath></text></svg>
         <b>Feito<br>no DF</b>
@@ -633,12 +670,12 @@ section{scroll-margin-top:80px}
       <p class="lead rv" style="--d:.12s">O universo do concreto e da construção civil, onde os nossos produtos fazem a diferença.</p>
     </div>
     <div class="galeria-grid">
-      <button type="button" class="gal g1 rv-s" data-full="imagens/g-maquinas.webp"><figure><img src="imagens/g-maquinas-800.webp" srcset="imagens/g-maquinas-800.webp 800w, imagens/g-maquinas.webp 1400w" sizes="(max-width:900px) 100vw, 60vw" alt="Caminhão betoneira e escavadeira em obra" loading="lazy" width="1400" height="933"><figcaption>Máquinas e equipamentos</figcaption></figure></button>
-      <button type="button" class="gal g2 rv-s" style="--d:.08s" data-full="imagens/g-estoque.webp"><figure><img src="imagens/g-estoque.webp" alt="Pilhas de blocos de concreto em pátio de estoque" loading="lazy" width="800" height="1066"><figcaption>Estoque paletizado</figcaption></figure></button>
-      <button type="button" class="gal g3 rv-s" style="--d:.12s" data-full="imagens/g-concretagem.webp"><figure><img src="imagens/g-concretagem.webp" alt="Equipe fazendo concretagem de laje" loading="lazy" width="1000" height="666"><figcaption>Concretagem</figcaption></figure></button>
-      <button type="button" class="gal g4 rv-s" style="--d:.16s" data-full="imagens/g-textura.webp"><figure><img src="imagens/g-textura.webp" alt="Textura de blocos de concreto empilhados" loading="lazy" width="800" height="600"><figcaption>Blocos de concreto</figcaption></figure></button>
-      <button type="button" class="gal g5 rv-s" style="--d:.2s" data-full="imagens/g-usina.webp"><figure><img src="imagens/g-usina.webp" alt="Usina com silos e pilha de agregados" loading="lazy" width="1000" height="668"><figcaption>Agregados e produção</figcaption></figure></button>
-      <button type="button" class="gal g6 rv-s" style="--d:.24s" data-full="imagens/g-obra.webp"><figure><img src="imagens/g-obra.webp" alt="Fundação de obra com armaduras e equipe" loading="lazy" width="1400" height="583"><figcaption>Obras de grande porte</figcaption></figure></button>
+      <button type="button" class="gal g1 rv-s" data-full="imagens/foto-estoque.webp"><figure><img src="imagens/foto-estoque.webp" alt="Estoque de blocos de concreto paletizados" loading="lazy" width="681" height="557"><figcaption>Estoque paletizado</figcaption></figure></button>
+      <button type="button" class="gal g2 rv-s" style="--d:.08s" data-full="imagens/foto-blocos.webp"><figure><img src="imagens/foto-blocos.webp" alt="Blocos de concreto empilhados sobre palete" loading="lazy" width="1000" height="750"><figcaption>Blocos de concreto</figcaption></figure></button>
+      <button type="button" class="gal g3 rv-s" style="--d:.12s" data-full="imagens/g-maquinas.webp"><figure><img src="imagens/g-maquinas-800.webp" alt="Caminhão betoneira e escavadeira em obra" loading="lazy" width="800" height="533"><figcaption>Máquinas e equipamentos</figcaption></figure></button>
+      <button type="button" class="gal g4 rv-s" style="--d:.16s" data-full="imagens/foto-bloquete.webp"><figure><img src="imagens/foto-bloquete.webp" alt="Bloquete sobre piso intertravado" loading="lazy" width="480" height="640"><figcaption>Bloquetes</figcaption></figure></button>
+      <button type="button" class="gal g5 rv-s" style="--d:.2s" data-full="imagens/g-concretagem.webp"><figure><img src="imagens/g-concretagem.webp" alt="Equipe fazendo concretagem de laje" loading="lazy" width="1000" height="666"><figcaption>Construção civil</figcaption></figure></button>
+      <button type="button" class="gal g6 rv-s" style="--d:.24s" data-full="imagens/foto-bloquetes-palete.webp"><figure><img src="imagens/foto-bloquetes-palete.webp" alt="Palete de bloquetes de concreto" loading="lazy" width="1100" height="735"><figcaption>Bloquetes paletizados</figcaption></figure></button>
     </div>
   </div>
 </section>
@@ -750,7 +787,6 @@ section{scroll-margin-top:80px}
   // Menu mobile
   var btn=d.querySelector('.menu-btn'), nav=d.getElementById('menu');
   function setMenu(open){
-    root.style.setProperty('--hh', header.getBoundingClientRect().bottom+'px');
     d.body.classList.toggle('menu-open', open);
     btn.setAttribute('aria-expanded', open);
     btn.setAttribute('aria-label', open?'Fechar menu':'Abrir menu');
@@ -779,12 +815,26 @@ section{scroll-margin-top:80px}
     secs.forEach(function(s){ if(s) so.observe(s); });
   }
 
-  // Parallax leve na foto principal
-  var px=d.querySelector('[data-parallax]'), reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(px && !reduce){
-    window.addEventListener('scroll', function(){
-      var y=window.scrollY; if(y<900) px.style.translate='0 '+(y*0.06)+'px';
-    },{passive:true});
+  // Profundidade: produtos da capa seguem o mouse e a rolagem
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var layers=[].slice.call(d.querySelectorAll('[data-depth]'));
+  if(layers.length && !reduce){
+    var mx=0,my=0,sy=0,ticking=false;
+    function apply(){
+      ticking=false;
+      layers.forEach(function(l){
+        var k=parseFloat(l.getAttribute('data-depth'))||10;
+        var r=l.getBoundingClientRect(), vis=r.bottom>0 && r.top<innerHeight;
+        if(!vis) return;
+        var c=(r.top+r.height/2-innerHeight/2)/innerHeight;
+        l.style.transform='translate3d('+(mx*k).toFixed(1)+'px,'+(my*k - c*k*2).toFixed(1)+'px,0)';
+      });
+    }
+    function req(){ if(!ticking){ ticking=true; requestAnimationFrame(apply); } }
+    if(window.matchMedia('(pointer:fine)').matches){
+      window.addEventListener('mousemove',function(e){ mx=(e.clientX/innerWidth-.5); my=(e.clientY/innerHeight-.5); req(); },{passive:true});
+    }
+    window.addEventListener('scroll',req,{passive:true}); req();
   }
 
   // Galeria (ampliar)
