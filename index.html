@@ -142,6 +142,10 @@ a{color:inherit}
 .prod h3{font-family:var(--font-title);font-stretch:82%;font-weight:900;font-size:1.6rem;line-height:1.05;text-transform:uppercase;color:var(--grafite);margin:6px 0 12px}
 .prod p{color:var(--muted);font-size:.98rem;margin-bottom:26px}
 .prod .btn{margin-top:auto;align-self:flex-start}
+.catalog-hint{display:none;align-items:center;gap:6px;margin-top:4px;font-size:.82rem;color:var(--muted)}
+.catalog-hint i{width:7px;height:7px;border-radius:50%;background:rgba(37,40,43,.2);transition:background .3s,width .3s}
+.catalog-hint i.on{width:20px;border-radius:4px;background:var(--laranja)}
+.catalog-hint span{margin-left:8px}
 
 /* ===== A empresa ===== */
 .sobre{background:var(--areia)}
@@ -192,13 +196,30 @@ a{color:inherit}
 .map{border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;background:var(--concreto-claro);box-shadow:var(--sombra)}
 .map iframe{width:100%;height:100%;border:0;display:block}
 
-/* ===== Chamada final ===== */
-.cta{background:var(--laranja);padding:clamp(64px,8vw,96px) 0}
-.cta .wrap{display:flex;align-items:center;justify-content:space-between;gap:32px 48px;flex-wrap:wrap}
+/* ===== Chamada final + pedido ===== */
+.cta{background:var(--laranja);padding:clamp(64px,8vw,104px) 0}
+.cta .wrap{display:grid;grid-template-columns:1fr minmax(0,460px);align-items:center;gap:40px 64px}
 .cta h2{font-family:var(--font-title);font-stretch:80%;font-weight:900;font-size:clamp(2rem,4vw,3.2rem);line-height:1;text-transform:uppercase;color:var(--grafite)}
-.cta p{color:var(--grafite);font-size:1.08rem;margin-top:12px;max-width:520px}
-.cta-side{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
-.cta-phone{font-family:var(--font-title);font-stretch:85%;font-weight:800;font-size:1.3rem;color:var(--grafite);text-decoration:none;padding-left:6px}
+.cta p{color:var(--grafite);font-size:1.08rem;margin-top:14px;max-width:460px}
+.cta-phone{display:inline-flex;align-items:center;gap:10px;margin-top:24px;font-family:var(--font-title);font-stretch:85%;font-weight:800;font-size:1.35rem;color:var(--grafite);text-decoration:none}
+.cta-phone svg{width:24px;height:24px;fill:var(--grafite)}
+.orc{background:#fff;border-radius:var(--r);padding:28px;box-shadow:0 30px 60px -30px rgba(28,30,32,.55);display:grid;gap:14px}
+.orc h3{font-family:var(--font-title);font-stretch:85%;font-weight:900;font-size:1.3rem;text-transform:uppercase;color:var(--grafite);margin-bottom:4px}
+.orc label{display:grid;gap:6px;font-size:.86rem;font-weight:700;color:var(--grafite)}
+.orc label em{font-style:normal;font-weight:500;color:var(--muted)}
+.orc input,.orc select{width:100%;min-height:50px;border:1.5px solid rgba(37,40,43,.18);border-radius:12px;padding:0 14px;font:500 1rem var(--font);color:var(--texto);background:#fff;appearance:none;-webkit-appearance:none}
+.orc select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2325282B' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:18px;padding-right:42px}
+.orc input:focus,.orc select:focus{outline:none;border-color:var(--laranja);box-shadow:0 0 0 3px rgba(217,119,50,.25)}
+.orc .btn{width:100%;margin-top:6px;white-space:normal;text-align:center}
+
+/* ===== Mapa sob demanda ===== */
+.map-load{width:100%;height:100%;border:0;cursor:pointer;display:grid;place-content:center;justify-items:center;gap:6px;font:inherit;color:var(--grafite);background:linear-gradient(var(--linha) 1px,transparent 1px) 0 0/32px 32px,linear-gradient(90deg,var(--linha) 1px,transparent 1px) 0 0/32px 32px,#E9E6E0}
+.map-load svg{width:44px;height:44px;stroke:var(--laranja-texto);fill:#fff;stroke-width:1.8;margin-bottom:6px}
+.map-load strong{font-size:1.05rem}
+.map-load span{font-size:.9rem;color:var(--muted);text-decoration:underline}
+
+/* ===== Barra fixa (celular) ===== */
+.mbar{display:none}
 
 /* ===== Rodapé ===== */
 .footer{background:var(--grafite-2);color:#B9BCBF}
@@ -273,6 +294,15 @@ a{color:inherit}
   .dif-item:nth-child(2n){padding-left:24px;border-left:1px solid rgba(255,255,255,.12)}
   .galeria-grid{grid-template-columns:1fr 1fr;gap:12px}
   .footer-top{grid-template-columns:1fr 1fr}
+  .cta .wrap{grid-template-columns:1fr}
+  .wa-float{display:none}
+  body{padding-bottom:76px}
+  .mbar{display:grid;grid-template-columns:1.4fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:95;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);box-shadow:0 -10px 30px -18px rgba(28,30,32,.45);border-top:1px solid var(--linha)}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border-radius:100px;font-weight:800;font-size:.98rem;text-decoration:none}
+  .mbar svg{width:20px;height:20px}
+  .mbar-wa{background:#25D366;color:#fff}.mbar-wa svg{fill:#fff}
+  .mbar-map{border:1.5px solid rgba(37,40,43,.2);color:var(--grafite)}.mbar-map svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linejoin:round}
+  .menu-open .mbar{display:none}
 }
 @media (max-width:640px){
   .hero-actions .btn{width:100%}
@@ -291,11 +321,13 @@ a{color:inherit}
   .gal:first-child,.gal:last-child{grid-column:1/-1}
   .label{font-size:.7rem;letter-spacing:.13em}
   .gal figcaption{padding:28px 12px 10px;font-size:.78rem}
-  .cta-side,.cta-side .btn{width:100%}
-  .cta-side .btn{white-space:normal;text-align:center;padding:12px 22px}
+  .orc{padding:22px 18px}
   .footer-top{grid-template-columns:1fr 1fr;gap:32px 20px;padding-top:56px}
   .footer-top>div:first-child,.footer-top>div:last-child{grid-column:1/-1}
-  .wa-float{width:56px;height:56px;right:16px;bottom:16px}
+  .catalog{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:0 calc(var(--pad)*-1);padding:4px var(--pad) 18px;scrollbar-width:none}
+  .catalog::-webkit-scrollbar{display:none}
+  .catalog .prod{flex:0 0 84%;scroll-snap-align:center}
+  .catalog-hint{display:flex}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -303,6 +335,7 @@ a{color:inherit}
   .js .rv{opacity:1;transform:none}
 }
 </style>
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 
@@ -416,7 +449,7 @@ a{color:inherit}
         </div>
       </article>
       <article class="prod rv" style="--d:.16s">
-        <div class="prod-img"><img src="imagens/catalogo-bloquete.webp" alt="Palete de bloquetes de concreto" width="960" height="720" loading="lazy"></div>
+        <div class="prod-img"><img src="imagens/catalogo-bloquete.webp" alt="Bloquetes de concreto" width="960" height="720" loading="lazy"></div>
         <div class="prod-body">
           <span class="prod-num">03</span>
           <h3>Bloquetes</h3>
@@ -424,6 +457,8 @@ a{color:inherit}
           <a class="btn btn-primary" href="https://wa.me/5561992679699?text=Ol%C3%A1!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Bloquetes." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Orçamento de bloquetes</a>
         </div>
       </article>
+    </div>
+    <p class="catalog-hint" aria-hidden="true"><i class="on"></i><i></i><i></i><span>Deslize para ver os produtos</span>
     </div>
   </div>
 </section>
@@ -535,7 +570,11 @@ a{color:inherit}
       </ul>
     </div>
     <div class="map rv">
-      <iframe title="Mapa da Cardoso Pré-Moldados no Google Maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3837.44!2d-47.9877829!3d-15.8862127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a397ba89570cf%3A0x984708f9c843f709!2sCardoso%20Pr%C3%A9-Moldados!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <button type="button" class="map-load" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3837.44!2d-47.9877829!3d-15.8862127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a397ba89570cf%3A0x984708f9c843f709!2sCardoso%20Pr%C3%A9-Moldados!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" aria-label="Carregar o mapa do Google">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        <strong>Park Way, Brasília - DF</strong>
+        <span>Toque para ver o mapa</span>
+      </button>
     </div>
   </div>
 </section>
@@ -543,14 +582,32 @@ a{color:inherit}
 <!-- CHAMADA FINAL -->
 <section class="cta" id="contato" aria-labelledby="t-cta">
   <div class="wrap">
-    <div>
+    <div class="cta-text">
       <h2 class="rv" id="t-cta">Pronto para construir?</h2>
-      <p class="rv" style="--d:.08s">Solicite agora o orçamento de blocos, canaletas ou bloquetes. Resposta rápida pelo WhatsApp.</p>
+      <p class="rv" style="--d:.08s">Preencha o pedido e ele chega pronto no nosso WhatsApp. Se preferir, fale direto com a gente.</p>
+      <a class="cta-phone rv" style="--d:.12s" href="https://wa.me/5561992679699" target="_blank" rel="noopener" data-origem="cta-telefone"><svg aria-hidden="true"><use href="#i-wa"/></svg>(61) 99267-9699</a>
     </div>
-    <div class="cta-side rv" style="--d:.16s">
-      <a class="btn btn-dark" href="https://wa.me/5561992679699?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20pr%C3%A9-moldados." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Solicitar orçamento no WhatsApp</a>
-      <a class="cta-phone" href="https://wa.me/5561992679699" target="_blank" rel="noopener">(61) 99267-9699</a>
-    </div>
+    <form class="orc rv" id="orcamento" style="--d:.16s" novalidate>
+      <h3>Monte seu pedido</h3>
+      <label>Produto
+        <select name="produto">
+          <option>Blocos de concreto</option>
+          <option>Canaletas e meias-calhas</option>
+          <option>Bloquetes</option>
+          <option>Mais de um produto</option>
+        </select>
+      </label>
+      <label>Quantidade aproximada
+        <input name="qtd" type="text" placeholder="Ex.: 2.000 blocos" autocomplete="off">
+      </label>
+      <label>Bairro ou cidade da entrega
+        <input name="local" type="text" placeholder="Ex.: Águas Claras" autocomplete="address-level2">
+      </label>
+      <label><span>Seu nome <em>(opcional)</em></span>
+        <input name="nome" type="text" autocomplete="name">
+      </label>
+      <button class="btn btn-dark" type="submit"><svg aria-hidden="true"><use href="#i-wa"/></svg>Enviar pedido pelo WhatsApp</button>
+    </form>
   </div>
 </section>
 
@@ -606,6 +663,10 @@ a{color:inherit}
 </footer>
 
 <a class="wa-float" href="https://wa.me/5561992679699?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+<nav class="mbar" aria-label="Contato rápido">
+  <a class="mbar-wa" href="https://wa.me/5561992679699?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener" data-origem="barra-whatsapp"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+  <a class="mbar-map" href="https://maps.app.goo.gl/DZ4xfc6Rin1j3MFt6" target="_blank" rel="noopener" data-origem="barra-rota"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l18-8-8 18-2-8z"/></svg>Como chegar</a>
+</nav>
 
 <dialog class="lightbox" id="lightbox" aria-label="Imagem ampliada">
   <button class="lb-close" type="button" aria-label="Fechar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
@@ -617,6 +678,8 @@ a{color:inherit}
 (function(){
   var d=document, root=d.documentElement;
   root.classList.add('js');
+  window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};
+  function track(n,o){ try{ window.va('event',{name:n,data:o?{origem:String(o).slice(0,60)}:{}}); }catch(_){} }
   var ano=d.getElementById('ano'); if(ano) ano.textContent=new Date().getFullYear();
 
   // Cabeçalho ao rolar
@@ -675,6 +738,42 @@ a{color:inherit}
     }
     window.addEventListener('scroll',req,{passive:true}); req();
   }
+
+  // Pedido pelo WhatsApp
+  var orc=d.getElementById('orcamento');
+  if(orc){ orc.addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=orc.elements, t='Olá! Gostaria de um orçamento.\nProduto: '+f.produto.value;
+    if(f.qtd.value.trim()) t+='\nQuantidade: '+f.qtd.value.trim();
+    if(f.local.value.trim()) t+='\nEntrega em: '+f.local.value.trim();
+    if(f.nome.value.trim()) t+='\nNome: '+f.nome.value.trim();
+    track('pedido-formulario');
+    var url='https://wa.me/5561992679699?text='+encodeURIComponent(t);
+    var w=window.open(url,'_blank'); if(!w) location.href=url;
+  }); }
+
+  // Mapa só ao tocar
+  var ml=d.querySelector('.map-load');
+  if(ml){ ml.addEventListener('click',function(){
+    var f=d.createElement('iframe'); f.title='Mapa da Cardoso Pré-Moldados no Google Maps'; f.src=ml.getAttribute('data-src');
+    f.setAttribute('referrerpolicy','no-referrer-when-downgrade'); f.setAttribute('allowfullscreen','');
+    ml.replaceWith(f);
+  }); }
+
+  // Indicador do carrossel de produtos
+  var cat=d.querySelector('.catalog'), dots=d.querySelectorAll('.catalog-hint i');
+  if(cat && dots.length){ cat.addEventListener('scroll',function(){
+    var cards=cat.children, best=0, bd=1e9, mid=cat.scrollLeft+cat.clientWidth/2;
+    for(var i=0;i<cards.length;i++){ var c=cards[i].offsetLeft+cards[i].offsetWidth/2, dd=Math.abs(c-mid); if(dd<bd){bd=dd;best=i;} }
+    dots.forEach(function(o,i){ o.classList.toggle('on',i===best); });
+  },{passive:true}); }
+
+  // Contagem de cliques no WhatsApp (Vercel Analytics)
+  d.addEventListener('click',function(e){
+    var a=e.target.closest('a[href*="wa.me"]'); if(!a) return;
+    var o=a.getAttribute('data-origem')||(a.closest('section,header,footer,nav')||{}).id||a.className||'link';
+    track('whatsapp',o);
+  });
 
   // Galeria (ampliar)
   var lb=d.getElementById('lightbox');
